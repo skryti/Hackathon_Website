@@ -5,7 +5,7 @@ export const NAV_ITEMS: NavItem[] = [
   { label: 'Tracks', href: '#tracks' },
   { label: 'Timeline', href: '#timeline' },
   { label: 'Prizes', href: '#prizes' },
-  { label: 'Rules & Rubric', href: '#rules' },
+  { label: 'Rules', href: '#rules' },
   { label: 'FAQ', href: '#faq' },
   { label: 'Organizers', href: '#organizers' },
   { label: 'Contact', href: '#contact' },

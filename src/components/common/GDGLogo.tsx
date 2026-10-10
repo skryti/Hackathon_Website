@@ -51,12 +51,12 @@ export function GDGLogo({ compact = false, className, ...props }: GDGLogoProps) 
         />
       </svg>
 
-      <div className="flex flex-col text-left leading-tight">
-        <div className="flex items-center gap-1 font-display text-sm font-bold tracking-tight text-txt">
+      <div className="flex flex-col text-left justify-center">
+        <div className="flex items-center gap-1.5 font-display text-sm font-bold tracking-tight text-white leading-none">
           <span>GDGoC</span>
           <span className="hidden sm:inline-block h-1.5 w-1.5 rounded-full bg-google-blue" />
         </div>
-        <span className="font-mono text-[10px] tracking-wider uppercase text-txt-3">
+        <span className="mt-1 font-mono text-[10px] tracking-wider uppercase text-txt-3 leading-none whitespace-nowrap">
           MITS-DU Gwalior
         </span>
       </div>
