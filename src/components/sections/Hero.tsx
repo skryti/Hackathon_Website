@@ -1,8 +1,7 @@
 import { lazy, Suspense, useRef, useState } from 'react'
 import { motion, useScroll, useTransform } from 'framer-motion'
-import { ArrowUpRight } from 'lucide-react'
+import { ArrowUpRight, Sparkles, Calendar, MapPin } from 'lucide-react'
 import { Button } from '../ui/Button'
-import { GlassCard } from '../ui/GlassCard'
 import { Countdown } from '../ui/Countdown'
 import { StatStrip } from '../ui/StatStrip'
 import { EVENT } from '../../data/event'
@@ -32,8 +31,8 @@ export function Hero() {
 
   const canvasScale = useTransform(scrollYProgress, [0, 1], [1, 1.1])
   const canvasOpacity = useTransform(scrollYProgress, [0, 1], [1, 0.2])
-  const headlineY = useTransform(scrollYProgress, [0, 1], [0, -60])
-  const countdownY = useTransform(scrollYProgress, [0, 1], [0, -25])
+  const headlineY = useTransform(scrollYProgress, [0, 1], [0, -40])
+  const countdownY = useTransform(scrollYProgress, [0, 1], [0, -15])
   const scrollHintOpacity = useTransform(scrollY, [0, 40], [1, 0])
 
   const handleRegisterClick = () => {
@@ -95,33 +94,34 @@ export function Hero() {
             </span>
           </motion.div>
 
-          {/* Main Title: INNOV8-MITS '26 */}
+          {/* Main Title: INNOV8-MITS - Old size, no '26, pure solid white in dark mode */}
           <motion.div style={reducedMotion ? undefined : { y: headlineY }} className="mt-6">
             <h1
               id="hero-heading"
               className="font-display text-[clamp(2.75rem,8vw,5.75rem)] font-black tracking-tight leading-[0.96] select-none"
             >
-              <span className="block grad-google-animated">
-                INNOV8-MITS &apos;26
+              <span className="block text-gray-900 dark:text-white drop-shadow-sm font-black">
+                INNOV8-MITS
               </span>
-              <span className="block text-txt text-[clamp(1.5rem,4vw,2.75rem)] font-bold tracking-tight mt-3 text-txt-2">
+              <span className="block text-txt-2 text-[clamp(1.5rem,4vw,2.75rem)] font-bold tracking-tight mt-3">
                 36 Hours of Code, Chaos &amp; Creation
               </span>
             </h1>
 
-            {/* Official Event Metadata Chips */}
-            <div className="mt-4 flex flex-wrap items-center justify-center gap-2">
-              <span className="rounded-md border border-google-blue/30 bg-google-blue/10 px-3 py-0.5 font-mono text-xs font-bold text-google-blue">
-                NATIONAL 36-HOUR HACKATHON
-              </span>
-              <span className="font-mono text-xs text-txt-3">·</span>
-              <span className="font-mono text-xs uppercase tracking-wider text-txt-2 font-semibold">
-                {EVENT.dateRangeLabel}
-              </span>
-              <span className="font-mono text-xs text-txt-3">·</span>
-              <span className="font-mono text-xs uppercase tracking-wider text-txt-3">
-                MITS-DU GWALIOR
-              </span>
+            {/* Highly Visible Event Date & Venue Badges */}
+            <div className="mt-5 flex flex-wrap items-center justify-center gap-2.5 sm:gap-3.5">
+              <div className="inline-flex items-center gap-2 rounded-full border border-google-blue/40 bg-google-blue/15 px-4 py-1.5 font-mono text-xs sm:text-sm font-bold text-google-blue shadow-md backdrop-blur-sm">
+                <Calendar size={15} className="text-google-blue" />
+                <span>10 NOVEMBER 2026</span>
+              </div>
+              <div className="inline-flex items-center gap-2 rounded-full border border-google-red/40 bg-google-red/15 px-4 py-1.5 font-mono text-xs sm:text-sm font-bold text-google-red shadow-md backdrop-blur-sm">
+                <MapPin size={15} className="text-google-red" />
+                <span>CONCLAVE HALL, MITS GWALIOR</span>
+              </div>
+              <div className="inline-flex items-center gap-2 rounded-full border border-google-green/40 bg-google-green/15 px-3.5 py-1.5 font-mono text-xs font-bold text-google-green shadow-sm backdrop-blur-sm">
+                <span className="h-2 w-2 rounded-full bg-google-green animate-pulse" />
+                <span>36-HOUR SPRINT</span>
+              </div>
             </div>
           </motion.div>
 
@@ -142,16 +142,17 @@ export function Hero() {
             transition={{ duration: reducedMotion ? 0.2 : 0.5, delay: 0.55, ease: EASE_OUT }}
             className="mt-8 flex flex-wrap items-center justify-center gap-3.5 sm:gap-4"
           >
-            <Button
+            <a
+              href={EVENT.registrationUrl}
+              target="_blank"
+              rel="noopener noreferrer"
               onClick={handleRegisterClick}
-              variant="primary"
-              size="lg"
-              icon={ArrowUpRight}
-              shimmer
-              className="shadow-xl shadow-google-blue/20 hover:shadow-google-blue/35 font-bold"
+              className="group relative inline-flex items-center gap-2 rounded-full border border-white/25 bg-gradient-to-r from-[#4285F4] via-[#6366F1] to-[#EA4335] px-6 sm:px-7 py-3 text-sm sm:text-base font-bold text-white shadow-xl shadow-google-blue/35 transition-all duration-200 hover:shadow-google-blue/60 hover:scale-105 active:scale-95 hover:brightness-110"
             >
-              Register Now
-            </Button>
+              <Sparkles size={16} className="text-amber-300 animate-pulse shrink-0" />
+              <span className="tracking-wide">Register Now</span>
+              <ArrowUpRight size={16} className="shrink-0 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+            </a>
             <Button
               variant="secondary"
               size="lg"
@@ -161,7 +162,7 @@ export function Hero() {
             </Button>
           </motion.div>
 
-          {/* Live 36-Hour Countdown Clock (Modern Telemetry HUD) */}
+          {/* Live 36-Hour Countdown Clock matching Image 3 directly without outer GlassCard */}
           <motion.div
             initial={{ opacity: 0, scale: reducedMotion ? 1 : 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -169,9 +170,7 @@ export function Hero() {
             style={reducedMotion ? undefined : { y: countdownY }}
             className="mt-10 w-full max-w-lg"
           >
-            <GlassCard className="px-6 sm:px-8 py-5 sm:py-6 border-border/80" glow="accent">
-              <Countdown />
-            </GlassCard>
+            <Countdown />
           </motion.div>
 
           {/* Quick Stats Counter Strip (Sleek Telemetry Cards) */}

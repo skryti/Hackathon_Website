@@ -92,8 +92,8 @@ export const SCHEDULE: ScheduleEntry[] = [
   {
     time: '12:00 AM',
     hour: '12:00',
-    label: 'Midnight Snacks & Mini Games',
-    detail: 'Hot Maggi, energy drinks, Red Bull supply drop, and rapid Blind Debugging challenges with instant prizes.',
+    label: 'Late-Night Refreshments & Networking',
+    detail: 'Hot refreshments, coffee/tea service, and casual developer networking round.',
     kind: 'fuel',
     day: 'SAT',
     phase: 2,

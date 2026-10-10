@@ -10,7 +10,7 @@ export function Judging() {
       id="judging"
       index={5}
       eyebrow="EVALUATION RUBRIC"
-      heading="Transparent Scoring Matrix."
+      heading="Transparent Scoring Matrix"
       gradientWords={['Scoring', 'Matrix']}
       deck="Every team is evaluated by Google Developer Experts, veteran startup founders, and senior engineers using a published 100-point rubric."
     >

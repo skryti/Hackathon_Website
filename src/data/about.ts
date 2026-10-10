@@ -10,30 +10,30 @@ export const ABOUT = {
   chips: ['FREE FOOD & SWAG', 'ZERO REGISTRATION FEE', 'GOOGLE CLOUD CREDITS', 'INDUSTRY MENTORSHIP'],
   highlights: [
     {
-      title: 'Mentorship from Industry Experts',
+      title: 'Mentorship from Google & Industry Leaders',
       description:
-        'Direct 1-on-1 guidance from Google Developer Experts (GDEs), startup founders, and senior engineers throughout the 36-hour sprint.',
+        'Get direct 1-on-1 guidance from Google Developer Experts, VC partners, and tech architects to supercharge your project code & pitch.',
       icon: 'Users',
       color: 'blue' as const,
     },
     {
-      title: 'Free Food, Midnight Fuel & Swag',
+      title: 'Food, Swag & Hospitality',
       description:
-        '100% sponsored gourmet meals, Red Bull hours, midnight Maggi, exclusive GDG merch hoodies, stickers, and collectibles.',
+        'Enjoy complimentary meals, refreshments, t-shirts, stickers, and premium GDG swag kits.',
       icon: 'Coffee',
       color: 'red' as const,
     },
     {
-      title: 'High-Impact Networking',
+      title: 'High-Octane Networking',
       description:
-        'Connect with 500+ top hackers, angel investors, recruiters, and tech community leaders from universities across India.',
+        'Connect with 500+ top student developers, founders, and recruiters across India. Build lifelong friendships and find co-founders.',
       icon: 'Network',
       color: 'yellow' as const,
     },
     {
-      title: 'Non-stop 36-Hour Coding Sprint',
+      title: 'Pure 36-Hour Hackathon Sprint',
       description:
-        'An intense, high-energy environment with ultra-fast gigabit Wi-Fi, hardware labs, relaxation zones, and live midnight mini-games.',
+        '36 hours of non-stop creation, high-speed Wi-Fi, dedicated hacking spaces, and late-night mini gaming tournaments.',
       icon: 'Zap',
       color: 'green' as const,
     },

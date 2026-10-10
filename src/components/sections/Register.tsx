@@ -1,7 +1,6 @@
 import { motion } from 'framer-motion'
-import { ArrowUpRight, Clock, Users, ShieldCheck, Gift } from 'lucide-react'
+import { ArrowUpRight, Clock, Users, ShieldCheck, Gift, Sparkles } from 'lucide-react'
 import { Button } from '../ui/Button'
-import { Eyebrow } from '../ui/Eyebrow'
 import { EVENT } from '../../data/event'
 import { triggerGoogleConfetti } from '../../lib/confetti'
 import { usePrefersReducedMotion } from '../../hooks/usePrefersReducedMotion'
@@ -74,21 +73,27 @@ export function Register() {
         viewport={{ once: true, margin: '-12% 0px -12% 0px' }}
         variants={reducedMotion ? { hidden: { opacity: 0 }, visible: { opacity: 1 } } : scaleIn(0.96)}
       >
-        <Eyebrow index={8} label="JOIN THE 36-HOUR CRUCIBLE" />
-
-        {/* Live Registration Closing Alert */}
-        <div className="mt-4 inline-flex items-center gap-2 rounded-full border border-google-red/30 bg-google-red/10 px-4 py-1.5 font-mono text-xs font-semibold text-google-red shadow-sm animate-pulse">
-          <Clock size={14} />
-          <span>LIVE ALERT: REGISTRATION CLOSES {EVENT.registrationCloseLabel}</span>
+        {/* Centered Eyebrow Pill */}
+        <div className="inline-flex items-center gap-2 rounded-full border border-google-blue/35 bg-google-blue/10 px-4 py-1.5 font-mono text-xs font-bold uppercase tracking-wider text-google-blue shadow-sm">
+          <Sparkles size={14} className="text-google-blue" />
+          <span>JOIN THE 36-HOUR CRUCIBLE</span>
         </div>
 
-        <h2 id="register-heading" className="mt-6 font-display text-display-lg font-extrabold text-txt tracking-tight">
-          <span className="block">Ready to Build the Future?</span>
-          <span className="block grad-google-animated">Secure Your Spot in INNOV8-MITS.</span>
+        {/* Live Registration Closing Alert */}
+        <div className="mt-4 inline-flex items-center gap-2 rounded-full border border-google-red/40 bg-google-red/10 px-4 py-1.5 font-mono text-xs font-semibold text-google-red shadow-sm animate-pulse">
+          <Clock size={14} />
+          <span>LIMITED HACKER SLOTS • REGISTRATIONS CLOSING SOON</span>
+        </div>
+
+        <h2 id="register-heading" className="mt-6 font-display text-3xl sm:text-4xl md:text-5xl font-black tracking-tight text-center">
+          <span className="text-gray-900 dark:text-white">Are You Ready To </span>
+          <span className="bg-gradient-to-r from-[#4285F4] via-[#EA4335] via-[#FBBC05] to-[#34A853] bg-clip-text text-transparent font-black">
+            INNOV8?
+          </span>
         </h2>
 
         <p className="mt-6 max-w-2xl text-body-lg text-txt-2 leading-relaxed">
-          Pick your track, assemble your crew of 2–4, and get ready for 36 hours of code, chaos, and creation at MITS-DU Gwalior.
+          Don&apos;t miss the flagship 36-hour sprint at Conclave Hall, MITS Gwalior. Team registrations are 100% free with complimentary stay, meals, mentorship, and ₹35,000+ in cash prizes (20k / 10k / 5k).
         </p>
 
         {/* Primary CTA with Confetti Burst */}
@@ -111,9 +116,10 @@ export function Register() {
           </Button>
         </motion.div>
 
-        <p className="mt-4 font-mono text-xs uppercase tracking-wider text-txt-3">
-          100% FREE PARTICIPATION · FAST TRACK REGISTRATION · ALL COLLEGES WELCOME
-        </p>
+        <div className="mt-4 inline-flex items-center gap-2 font-mono text-xs text-txt-3">
+          <Clock size={13} className="text-google-yellow" />
+          <span>Hackathon Commences: 10 November 2026 · Conclave Hall, MITS Gwalior</span>
+        </div>
 
         {/* Perks Grid */}
         <div className="mt-16 grid w-full grid-cols-1 gap-6 sm:grid-cols-3 text-left">

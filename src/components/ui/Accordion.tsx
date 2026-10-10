@@ -58,17 +58,17 @@ export function Accordion({ items, defaultOpenIndex = null }: AccordionProps) {
               onClick={() => toggle(i)}
               onKeyDown={(e) => handleKeyDown(e, i)}
               className={cn(
-                'flex w-full items-center justify-between gap-4 px-6 py-5 text-left transition-colors duration-160 hover:bg-surface-hover',
-                isOpen && 'bg-surface-hover',
+                'flex w-full items-center justify-between gap-3 px-4 sm:px-5 py-3 sm:py-3.5 text-left transition-colors duration-150 hover:bg-surface/60',
+                isOpen && 'bg-surface/40',
               )}
             >
-              <span className="font-display text-display-md text-txt">{item.question}</span>
+              <span className="text-xs sm:text-sm md:text-[15px] font-semibold text-txt">{item.question}</span>
               <motion.span
                 animate={{ rotate: isOpen ? 180 : 0 }}
-                transition={{ duration: 0.26 }}
-                className="shrink-0 text-txt-2"
+                transition={{ duration: 0.2 }}
+                className="shrink-0 text-txt-3"
               >
-                <ChevronDown size={22} aria-hidden />
+                <ChevronDown size={16} aria-hidden />
               </motion.span>
             </button>
             <AnimatePresence initial={false}>
@@ -80,10 +80,10 @@ export function Accordion({ items, defaultOpenIndex = null }: AccordionProps) {
                   initial={{ height: 0, opacity: 0 }}
                   animate={{ height: 'auto', opacity: 1 }}
                   exit={{ height: 0, opacity: 0 }}
-                  transition={{ duration: 0.3 }}
+                  transition={{ duration: 0.22 }}
                   className="overflow-hidden"
                 >
-                  <p className="px-6 pb-6 text-body text-txt-2">{item.answer}</p>
+                  <p className="px-4 sm:px-5 pb-3.5 pt-0.5 text-xs sm:text-[13px] text-txt-2 leading-relaxed">{item.answer}</p>
                 </motion.div>
               ) : null}
             </AnimatePresence>

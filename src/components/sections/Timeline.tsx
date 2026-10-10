@@ -47,39 +47,51 @@ const KIND_CONFIG: Record<ScheduleKind, { color: string; border: string; bg: str
 }
 
 const PHASES = [
-  { id: 0, label: 'All 36 Hours', subtitle: 'Continuous Timeline' },
-  { id: 1, label: 'Phase 1: Day 1', subtitle: 'Kickoff & Ideation' },
-  { id: 2, label: 'Phase 2: Day 2', subtitle: 'The 24-Hour Crucible' },
-  { id: 3, label: 'Phase 3: Day 3', subtitle: 'Final Stretch & Showdown' },
+  {
+    id: 1,
+    label: 'Day 1 (Hours 00 - 12)',
+    date: 'SATURDAY, NOV 14, 2026 • HOURS 00 - 12',
+    title: 'Phase 1: Kickoff, Ideation & Mentor Sync',
+  },
+  {
+    id: 2,
+    label: 'Day 2 (Hours 12 - 28)',
+    date: 'SUNDAY, NOV 15, 2026 • HOURS 12 - 28',
+    title: 'Phase 2: The 24-Hour Build Sprint',
+  },
+  {
+    id: 3,
+    label: 'Day 3 (Hours 28 - 36)',
+    date: 'SUNDAY, NOV 15, 2026 • HOURS 28 - 36',
+    title: 'Phase 3: Final Pitches, Judging & Victory Ceremony',
+  },
 ]
 
 export function Timeline() {
-  const [selectedPhase, setSelectedPhase] = useState<number>(0)
+  const [selectedPhase, setSelectedPhase] = useState<number>(1)
   const timelineRef = useRef<HTMLDivElement>(null)
   const { scrollYProgress } = useScroll({
     target: timelineRef,
     offset: ['start end', 'end start'],
   })
 
-  const filteredEntries =
-    selectedPhase === 0
-      ? SCHEDULE
-      : SCHEDULE.filter((e) => e.phase === selectedPhase)
+  const currentPhase = PHASES.find((p) => p.id === selectedPhase) ?? PHASES[0]
+  const filteredEntries = SCHEDULE.filter((e) => e.phase === selectedPhase)
 
   return (
     <SectionShell
       id="timeline"
       index={3}
-      eyebrow="36-HOUR ROADMAP"
-      heading="The 36-Hour Battle Timeline."
-      gradientWords={['Timeline', 'Battle']}
-      deck="From the opening keynote to the Hour 36 repository freeze. Track every milestone, food drop, mentorship sprint, and mainstage pitching round."
+      eyebrow="36-HOUR RUNTIME SCHEDULE"
+      heading="The Hackathon Timeline"
+      gradientWords={['Timeline']}
+      deck="Every hour counts. Explore our structured 3–phase schedule packed with keynotes, mentorship rounds, meal breaks, and final pitching showdowns."
       band="elevated"
     >
       {/* Legend & Phase Tabs */}
       <div className="space-y-6">
-        {/* Phase Toggle Tabs */}
-        <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 p-1.5 rounded-2xl border border-border bg-surface/60 backdrop-blur-md max-w-3xl mx-auto">
+        {/* Phase Toggle Tabs matching Image 3 */}
+        <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 p-1.5 rounded-2xl border border-border bg-surface/60 backdrop-blur-md max-w-2xl mx-auto">
           {PHASES.map((phase) => {
             const isActive = selectedPhase === phase.id
             return (
@@ -87,7 +99,7 @@ export function Timeline() {
                 key={phase.id}
                 type="button"
                 onClick={() => setSelectedPhase(phase.id)}
-                className={`relative flex-1 min-w-[140px] px-4 py-2.5 rounded-xl text-center transition-all duration-200 ${
+                className={`relative flex-1 min-w-[130px] px-3.5 py-2.5 rounded-xl text-center transition-all duration-200 ${
                   isActive
                     ? 'text-white font-bold shadow-md'
                     : 'text-txt-2 hover:text-txt hover:bg-surface'
@@ -100,15 +112,23 @@ export function Timeline() {
                     transition={{ type: 'spring', damping: 25, stiffness: 350 }}
                   />
                 ) : null}
-                <div className="relative z-10 font-display text-xs sm:text-sm">
-                  {phase.label}
-                </div>
-                <div className="relative z-10 font-mono text-[10px] opacity-80 hidden sm:block">
-                  {phase.subtitle}
+                <div className="relative z-10 font-display text-xs sm:text-sm font-bold flex items-center justify-center gap-1.5">
+                  <Clock size={13} className={isActive ? 'text-white' : 'text-txt-3'} />
+                  <span>{phase.label}</span>
                 </div>
               </button>
             )
           })}
+        </div>
+
+        {/* Active Phase Banner matching Image 3 */}
+        <div className="mx-auto max-w-2xl rounded-2xl border border-white/[0.08] bg-[#0c1017]/80 px-6 py-4 text-center shadow-lg backdrop-blur-md">
+          <span className="font-mono text-[11px] font-bold tracking-widest uppercase text-google-blue">
+            {currentPhase.date}
+          </span>
+          <h3 className="mt-1 font-display text-lg sm:text-xl font-black text-white">
+            {currentPhase.title}
+          </h3>
         </div>
 
         {/* Legend Chips */}

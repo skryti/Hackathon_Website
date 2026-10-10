@@ -7,33 +7,38 @@ export const FAQ: FaqItem[] = [
       'Students from all colleges, universities, and academic years across India are warmly welcome! Whether you are a first-year student writing your first lines of code or a final-year veteran engineer, there is a place for you.',
   },
   {
-    question: 'Is accommodation and food provided for the 36 hours?',
+    question: 'Is accommodation and food provided?',
     answer:
-      'Yes, 100%! All gourmet meals (breakfast, lunch, dinner), midnight snacks, continuous coffee/tea, Red Bull energy hours, and designated resting/nap zones on campus are fully sponsored by GDG On Campus MITS-DU Gwalior.',
+      'Yes! Complimentary meals, refreshments, and resting spaces at Conclave Hall, MITS Gwalior are provided throughout the hackathon for all participants.',
+  },
+  {
+    question: 'Where is the venue and what is the date?',
+    answer:
+      'The hackathon takes place at Conclave Hall, MITS Gwalior starting on 10 November 2026.',
   },
   {
     question: 'Is it free to register for the hackathon?',
     answer:
-      'Yes, participation is 100% Free! There are no hidden fees or charges at any stage. Selected teams receive free access to the venue, food, swag kits, and cloud compute credits.',
+      'Yes, participation is 100% Free! There are no hidden fees. Selected teams receive complimentary access to the venue, food, swag kits, and developer perks.',
   },
   {
     question: 'What is the required team size?',
     answer:
-      'Teams must consist of 2 to 4 members. If you do not have a full team yet, you can register solo or as a duo; we host an active team-formation mixer at 11:15 AM on Day 1 to help you find awesome teammates.',
+      'Teams must consist of 2 to 4 members. You can also register solo or as a duo and team up during check-in.',
   },
   {
     question: 'Can I use Generative AI or pre-built libraries?',
     answer:
-      'Yes! You are encouraged to leverage modern AI tools like Google Gemini, Claude, and GitHub Copilot, as well as public npm packages and starter kits. However, all core business logic and code specific to your solution must be created during the 36-hour sprint.',
+      'Yes, you can leverage AI tools (Gemini, Copilot) and open-source libraries. Core project code must be developed during the hackathon.',
   },
   {
     question: 'What should I bring to the hackathon?',
     answer:
-      'Bring your laptop, chargers, extension cord/power strip, personal toiletries, a warm jacket/hoodie, and your valid college student ID card for entry verification.',
+      'Bring your laptop, chargers, valid student ID card, and any specialized hardware needed for your project.',
   },
   {
     question: 'What if I am a beginner?',
     answer:
-      'INNOV8-MITS is beginner-friendly! We feature dedicated technical workshops, continuous mentor desk rotations from Google Developer Experts, and a dedicated "Best First-Year Hack" cash prize (₹5,000) for freshman teams.',
+      'INNOV8-MITS is beginner-friendly! We have dedicated mentor desk rotations and technical guidance throughout the build sprint.',
   },
 ]

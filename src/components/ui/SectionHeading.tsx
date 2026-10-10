@@ -10,20 +10,27 @@ interface SectionHeadingProps {
 export function SectionHeading({ children, gradientWords, className, id }: SectionHeadingProps) {
   if (!gradientWords?.length) {
     return (
-      <h2 id={id} className={cn('font-display text-display-lg text-txt', className)}>
-        {children}
+      <h2 id={id} className={cn('font-display text-3xl sm:text-4xl md:text-5xl font-black text-center mx-auto tracking-tight leading-[1.15]', className)}>
+        <span className="text-gray-900 dark:text-white">{children}</span>
       </h2>
     )
   }
 
   const words = children.split(' ')
   return (
-    <h2 id={id} className={cn('font-display text-display-lg text-txt', className)}>
+    <h2 id={id} className={cn('font-display text-3xl sm:text-4xl md:text-5xl font-black text-center mx-auto tracking-tight leading-[1.15]', className)}>
       {words.map((word, i) => {
-        const bare = word.replace(/[.,]/g, '')
+        const bare = word.replace(/[.,!?:;&]/g, '')
         const isGradient = gradientWords.includes(bare)
         return (
-          <span key={i} className={isGradient ? 'grad-text' : undefined}>
+          <span
+            key={i}
+            className={
+              isGradient
+                ? 'bg-gradient-to-r from-[#4285F4] via-[#EA4335] via-[#FBBC05] to-[#34A853] bg-clip-text text-transparent font-black inline-block'
+                : 'text-gray-900 dark:text-white font-black'
+            }
+          >
             {word}
             {i < words.length - 1 ? ' ' : ''}
           </span>

@@ -15,12 +15,12 @@ export function StatStrip({ stats }: StatStripProps) {
       {stats.map((stat) => (
         <div
           key={stat.label}
-          className="flex flex-col items-center justify-center p-4 sm:p-5 rounded-2xl border border-border/80 bg-surface/75 backdrop-blur-md shadow-sm transition-all duration-300 hover:border-google-blue/30"
+          className="flex flex-col items-center justify-center py-2 px-3 sm:py-3 sm:px-4 rounded-xl border border-border/80 bg-surface/75 backdrop-blur-md shadow-sm transition-all duration-300 hover:border-google-blue/30"
         >
-          <span className="font-display text-2xl sm:text-3xl font-black text-txt tracking-tight">
+          <span className="font-display text-lg sm:text-2xl font-black text-txt tracking-tight leading-tight">
             {stat.value}
           </span>
-          <span className="mt-1 font-mono text-[10px] sm:text-[11px] font-semibold uppercase tracking-wider text-txt-2">
+          <span className="mt-0.5 font-mono text-[9px] sm:text-[10px] font-semibold uppercase tracking-wider text-txt-2">
             {stat.label}
           </span>
         </div>

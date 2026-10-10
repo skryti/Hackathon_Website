@@ -1,13 +1,12 @@
 import { useEffect, useState } from 'react'
 import type { MouseEvent } from 'react'
 import { motion } from 'framer-motion'
-import { Menu, ArrowUpRight } from 'lucide-react'
+import { Menu, ArrowUpRight, Sparkles } from 'lucide-react'
 import { NAV_ITEMS } from '../../data/nav'
 import { EVENT } from '../../data/event'
 import { useScrollApi } from './SmoothScrollProvider'
 import { ThemeToggle } from './ThemeToggle'
 import { MobileMenu } from './MobileMenu'
-import { Button } from '../ui/Button'
 import { GDGLogo } from '../common/GDGLogo'
 import { useActiveSection } from '../../hooks/useActiveSection'
 import { triggerGoogleConfetti } from '../../lib/confetti'
@@ -104,28 +103,25 @@ export function Navbar() {
             })}
           </ul>
 
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-2.5 sm:gap-3.5">
             <ThemeToggle />
-            <Button
-              as="a"
+            <a
               href={EVENT.registrationUrl}
               target="_blank"
               rel="noopener noreferrer"
               onClick={handleRegisterClick}
-              variant="primary"
-              size="sm"
-              icon={ArrowUpRight}
-              shimmer
-              className="hidden sm:inline-flex shadow-sm hover:shadow-google-blue/20"
+              className="group relative inline-flex items-center gap-1.5 sm:gap-2 rounded-full border border-white/25 bg-gradient-to-r from-[#4285F4] via-[#6366F1] to-[#EA4335] px-4 sm:px-5 py-2 sm:py-2.5 text-xs sm:text-sm font-bold text-white shadow-[0_0_22px_rgba(66,133,244,0.45)] transition-all duration-200 hover:shadow-[0_0_30px_rgba(234,67,53,0.55)] hover:scale-105 active:scale-95 hover:brightness-110"
             >
-              Register Now
-            </Button>
+              <Sparkles size={14} className="text-amber-300 animate-pulse shrink-0" />
+              <span className="tracking-wide">Register Now</span>
+              <ArrowUpRight size={14} className="shrink-0 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+            </a>
             <button
               type="button"
               onClick={() => setMobileOpen(true)}
               aria-label="Open menu"
               aria-expanded={mobileOpen}
-              className="flex h-11 w-11 items-center justify-center rounded-full border border-border text-txt lg:hidden transition-colors hover:bg-surface"
+              className="flex h-10 w-10 sm:h-11 sm:w-11 items-center justify-center rounded-full border border-border text-txt lg:hidden transition-colors hover:bg-surface"
             >
               <Menu size={20} aria-hidden />
             </button>

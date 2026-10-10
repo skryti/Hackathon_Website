@@ -16,7 +16,7 @@ export function Tracks() {
         id="tracks"
         index={2}
         eyebrow="PROBLEM DOMAINS"
-        heading="6 High-Impact Hackathon Tracks."
+        heading="6 High-Impact Hackathon Tracks"
         gradientWords={['Hackathon', 'Tracks']}
         deck="Choose your battleground. From Autonomous AI and Zero-Knowledge security to Smart Campus automation, each track offers curated problem statements and dedicated prizes."
         band="base"

@@ -14,8 +14,8 @@ export function Faq() {
       id="faq"
       index={7}
       eyebrow="FREQUENTLY ASKED QUESTIONS"
-      heading="Everything You Need to Know."
-      gradientWords={['Need', 'Know']}
+      heading="Frequently Asked Questions"
+      gradientWords={['Questions']}
       deck="Got questions about eligibility, accommodation, team rules, or technology stacks? We have you covered."
     >
       <div className="mx-auto max-w-[840px] space-y-10">
