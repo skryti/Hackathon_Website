@@ -5,7 +5,6 @@ import { X, ArrowUpRight } from 'lucide-react'
 import { NAV_ITEMS } from '../../data/nav'
 import { EVENT } from '../../data/event'
 import { useScrollApi } from './SmoothScrollProvider'
-import { ThemeToggle } from './ThemeToggle'
 import { Button } from '../ui/Button'
 import { GDGLogo } from '../common/GDGLogo'
 import { triggerGoogleConfetti } from '../../lib/confetti'
@@ -121,10 +120,6 @@ export function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
             </ul>
 
             <div className="pt-8 border-t border-border flex flex-col gap-4">
-              <div className="flex items-center justify-between">
-                <span className="font-mono text-sm text-txt-2">Toggle Theme</span>
-                <ThemeToggle />
-              </div>
               <Button
                 as="a"
                 href={EVENT.registrationUrl}

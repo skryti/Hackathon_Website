@@ -13,6 +13,7 @@ import { Judging } from './components/sections/Judging'
 import { Rules } from './components/sections/Rules'
 import { Faq } from './components/sections/Faq'
 import { Register } from './components/sections/Register'
+import { Organizers } from './components/sections/Organizers'
 
 function App() {
   return (
@@ -37,6 +38,7 @@ function App() {
         <Rules />
         <Faq />
         <Register />
+        <Organizers />
       </main>
       <Footer />
     </SmoothScrollProvider>

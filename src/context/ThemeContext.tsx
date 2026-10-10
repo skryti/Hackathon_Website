@@ -1,4 +1,4 @@
-import { createContext, useCallback, useContext, useEffect, useMemo, useState } from 'react'
+import { createContext, useCallback, useContext, useEffect, useMemo } from 'react'
 import type { ReactNode } from 'react'
 import type { Theme } from '../types'
 
@@ -13,71 +13,35 @@ interface ThemeContextValue {
 
 const ThemeContext = createContext<ThemeContextValue | null>(null)
 
-function readStoredTheme(): Theme | null {
-  try {
-    const stored = localStorage.getItem(STORAGE_KEY)
-    return stored === 'dusk' || stored === 'dawn' ? stored : null
-  } catch {
-    return null
-  }
-}
-
-function getInitialTheme(): Theme {
-  const stored = readStoredTheme()
-  if (stored) return stored
-  try {
-    return window.matchMedia('(prefers-color-scheme: light)').matches ? 'dawn' : 'dusk'
-  } catch {
-    return 'dusk'
-  }
-}
-
-function applyThemeToDocument(theme: Theme) {
+function applyThemeToDocument() {
   const root = document.documentElement
-  root.classList.toggle('dark', theme === 'dusk')
-  root.style.colorScheme = theme === 'dusk' ? 'dark' : 'light'
+  root.classList.add('dark')
+  root.style.colorScheme = 'dark'
   const meta = document.querySelector('meta[name="theme-color"]')
-  if (meta) meta.setAttribute('content', theme === 'dusk' ? '#07070B' : '#FBF7F0')
+  if (meta) meta.setAttribute('content', '#070709')
 }
 
 export function ThemeProvider({ children }: { children: ReactNode }) {
-  const [theme, setThemeState] = useState<Theme>(getInitialTheme)
+  const theme: Theme = 'dusk'
 
   useEffect(() => {
-    applyThemeToDocument(theme)
-  }, [theme])
-
-  useEffect(() => {
-    if (readStoredTheme()) return
-    const mq = window.matchMedia('(prefers-color-scheme: light)')
-    const handler = (e: MediaQueryListEvent) => {
-      if (readStoredTheme()) return
-      setThemeState(e.matches ? 'dawn' : 'dusk')
-    }
-    mq.addEventListener('change', handler)
-    return () => mq.removeEventListener('change', handler)
+    applyThemeToDocument()
+    try {
+      localStorage.setItem(STORAGE_KEY, 'dusk')
+    } catch {}
   }, [])
 
-  const setTheme = useCallback((next: Theme) => {
-    const root = document.documentElement
-    root.setAttribute('data-theme-transition', '')
-    window.setTimeout(() => root.removeAttribute('data-theme-transition'), 420)
-
-    setThemeState(next)
-    try {
-      localStorage.setItem(STORAGE_KEY, next)
-    } catch {
-      // private browsing / blocked storage — theme still applies for this session
-    }
+  const setTheme = useCallback((_next: Theme) => {
+    // Locked in dark mode
   }, [])
 
   const toggleTheme = useCallback(() => {
-    setTheme(theme === 'dusk' ? 'dawn' : 'dusk')
-  }, [theme, setTheme])
+    // Locked in dark mode
+  }, [])
 
   const value = useMemo(
     () => ({ theme, resolved: theme, setTheme, toggleTheme }),
-    [theme, setTheme, toggleTheme],
+    [],
   )
 
   return <ThemeContext.Provider value={value}>{children}</ThemeContext.Provider>

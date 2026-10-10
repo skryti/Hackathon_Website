@@ -16,7 +16,7 @@ export const EVENT = {
   clockEndISO: '2026-11-11T22:00:00+05:30',
   eventEndISO: '2026-11-12T17:00:00+05:30',
   registrationCloseLabel: '10 NOVEMBER 2026, 11:59 PM IST',
-  registrationUrl: 'https://docs.google.com/forms/d/e/1FAIpQLSd8cnpJ3IRq-NSqEWzAf84ETrWMJXu15ADXkKyKQKMxNu_MTw/viewform',
+  registrationUrl: 'https://docs.google.com/forms/d/e/1FAIpQLSfbQul-MsSYSMqA8xu5La2QQqsUKjv77k7eLzyT5oRq5FxY5A/viewform?usp=publish-editor',
   discordUrl: 'https://discord.gg/gdg-mits',
   stats: [
     { value: '36 HOURS', label: 'NON-STOP CODE SPRINT' },

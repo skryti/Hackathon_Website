@@ -5,7 +5,6 @@ import { Menu, ArrowUpRight, Sparkles } from 'lucide-react'
 import { NAV_ITEMS } from '../../data/nav'
 import { EVENT } from '../../data/event'
 import { useScrollApi } from './SmoothScrollProvider'
-import { ThemeToggle } from './ThemeToggle'
 import { MobileMenu } from './MobileMenu'
 import { GDGLogo } from '../common/GDGLogo'
 import { useActiveSection } from '../../hooks/useActiveSection'
@@ -101,7 +100,6 @@ export function Navbar() {
           </ul>
 
           <div className="flex items-center gap-2.5 sm:gap-3.5">
-            <ThemeToggle />
             <a
               href={EVENT.registrationUrl}
               target="_blank"

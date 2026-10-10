@@ -1,10 +1,10 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="dark">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#070709" />
-    <meta name="color-scheme" content="dark light" />
+    <meta name="color-scheme" content="dark" />
 
     <title>HackInnov8 2026 — 36 Hours of Code, Chaos &amp; Creation | GDG On Campus MITS-DU Gwalior</title>
     <meta
@@ -31,18 +31,13 @@
     />
 
     <script>
-      // Pre-paint theme resolution — prevents a flash of the wrong theme.
+      // Force dark mode exclusively
       ;(function () {
+        document.documentElement.classList.add('dark')
+        document.documentElement.style.colorScheme = 'dark'
         try {
-          var s = localStorage.getItem('halflight-theme')
-          var dark = s
-            ? s === 'dusk'
-            : !window.matchMedia('(prefers-color-scheme: light)').matches
-          if (dark) document.documentElement.classList.add('dark')
-          document.documentElement.style.colorScheme = dark ? 'dark' : 'light'
-        } catch (e) {
-          document.documentElement.classList.add('dark')
-        }
+          localStorage.setItem('halflight-theme', 'dusk')
+        } catch (e) {}
       })()
     </script>
   </head>
