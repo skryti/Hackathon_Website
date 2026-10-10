@@ -1,66 +1,83 @@
-# HALFLIGHT 36
+<div align="center">
 
-> Thirty-six hours between dusk and the second dawn.
+  # 🚀 HackInnov8 — Official Hackathon Website
 
-Recruitment-task website for a fictional 36-hour college hackathon, built as a
-frontend-only React site. No backend — registration happens through an
-external Google Form.
+  **The Flagship Hackathon Platform by GDG on Campus — MITS Gwalior**
 
-## Tech stack
+  [![Live Site](https://img.shields.io/badge/Live%20Demo-Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://hackinnov8-gdgoc-mits.vercel.app/)
+  [![GitHub Repo](https://img.shields.io/badge/GitHub-Repository-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/skryti/Hackathon_Website)
+  [![Vite](https://img.shields.io/badge/Bundler-Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white)](https://vitejs.dev/)
+  [![React](https://img.shields.io/badge/Frontend-React-61DAFB?style=for-the-badge&logo=react&logoColor=black)](https://react.dev/)
+  [![Tailwind CSS](https://img.shields.io/badge/Styling-Tailwind%20CSS-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white)](https://tailwindcss.com/)
+  [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](LICENSE)
 
-- **React 19 + TypeScript + Vite** — app shell and tooling
-- **Tailwind CSS v4** (via `@tailwindcss/vite`) — all styling, theme tokens
-  defined as CSS custom properties in `src/index.css`
-- **Framer Motion** — scroll reveals, the horizontal-scroll timeline, the
-  hero's mount sequence and parallax
-- **Three.js + React Three Fiber + drei** — the 3D "Terminator Globe" in the
-  hero (custom shader day/night boundary, particle field, orbiting track
-  satellites)
-- **Lenis** — smooth scrolling
-- **lucide-react** — icon set (plus three hand-drawn inline SVG brand marks
-  in the footer, since lucide dropped brand/logo glyphs)
+  <p align="center">
+    <a href="https://hackinnov8-gdgoc-mits.vercel.app/"><strong>🌐 View Live Website</strong></a> •
+    <a href="https://github.com/skryti/Hackathon_Website/issues"><strong>Report Bug</strong></a> •
+    <a href="https://github.com/skryti/Hackathon_Website/pulls"><strong>Request Feature</strong></a>
+  </p>
 
-## Before you launch this for real
+</div>
 
-Open `src/data/event.ts` and replace:
+---
 
-- `registrationUrl` — currently `https://forms.gle/placeholder`. Point this
-  at your real Google Form; it's read from this one place everywhere on the
-  site (hero, navbar, register section).
-- Dates, venue, stats, and contact emails if you're not actually running
-  this exact fictional event.
+## 📌 Overview
 
-All other copy (schedule, tracks, rules, judging, prizes, FAQ, socials) lives
-in `src/data/*.ts` — edit there, not in the components.
+**HackInnov8** is the flagship hackathon organized by **Google Developer Groups on Campus (GDG on Campus)** at **Madhav Institute of Technology & Science (MITS), Gwalior**.
 
-## Development
+This repository contains the source code for the official landing portal. The website is engineered to give participants a fast, interactive experience with details on hackathon tracks, timelines, prize pools, partner tracks, and registration guidelines.
 
-```bash
-npm install
-npm run dev      # starts the Vite dev server
-npm run build    # type-checks + production build to dist/
-npm run preview  # preview the production build locally
-```
+---
 
-## Project structure
+## 🛠️ Tech Stack & Libraries
 
-```
-src/
-├── components/
-│   ├── layout/     # Navbar, Footer, ThemeToggle, SectionShell, scroll chrome
-│   ├── sections/   # One file per page section (Hero, About, Tracks, ...)
-│   ├── three/      # The 3D hero scene (Terminator Globe, particles, satellites)
-│   └── ui/         # Shared primitives (Button, GlassCard, Reveal, Countdown, ...)
-├── context/        # Theme (dusk/dawn) context
-├── data/           # All copy and content, typed — single source of truth
-├── hooks/          # useLenis, useCountdown, useDeviceTier, etc.
-├── lib/            # Motion variants, Tailwind class helper, Three.js color bridge
-└── types/          # Shared TypeScript types
-```
+| Layer | Technology | Purpose |
+| :--- | :--- | :--- |
+| **Framework / Core** | [React](https://react.dev/) / [JavaScript (ES6+)](https://developer.mozilla.org/en-US/docs/Web/JavaScript) | Component-based interactive UI |
+| **Build Tool** | [Vite](https://vitejs.dev/) | Lightning-fast HMR and bundle optimization |
+| **Styling** | [Tailwind CSS](https://tailwindcss.com/) + PostCSS | Utility-first responsive design & custom animations |
+| **Icons** | [Lucide React](https://lucide.dev/) / [React Icons](https://react-icons.github.io/react-icons/) | Vector icons and visual glyphs |
+| **Animations** | [Framer Motion](https://www.framer.com/motion/) / CSS Transitions | Scroll reveals, theme transitions, and hover states |
+| **Deployment** | [Vercel](https://vercel.com/) | Continuous integration & edge CDN hosting |
 
-## Theme
+---
 
-Dark mode is **DUSK** (the default), light mode is **DAWN** — the toggle in
-the navbar is themed as a sunrise, not a generic switch. Resolution order on
-load: an explicit previous choice (`localStorage`) → the OS's
-`prefers-color-scheme` → DUSK by default.
+## ✨ Key Features
+
+- 🌓 **Dynamic Theme Switching:** Seamless dark mode and light mode toggling with persisted preferences.
+- 📱 **Mobile-First Responsiveness:** Adaptive grid and flex layouts tuned for smartphones, tablets, and wide screens.
+- ⏱️ **Countdown Timer & Live Schedule:** Dynamic schedule tracking for key hackathon milestones and round deadlines.
+- 🎯 **Domain Tracks Display:** Highlights challenge categories (AI/ML, Web3, Smart Automation, Open Innovation).
+- 🏆 **Prizes & Community Perks:** Tiered cards displaying prize values, sponsor credits, and participant goodies.
+- ❓ **Collapsible FAQ:** Searchable and expandable accordion for quick question resolution.
+
+---
+
+## 📂 Project Structure
+
+```text
+Hackathon_Website/
+├── public/                 # Static assets (logos, favicon, banner art)
+│   └── favicon.svg
+├── src/
+│   ├── assets/             # Brand graphics, icons, and illustrations
+│   ├── components/         # Modular React components
+│   │   ├── Navbar.jsx      # Navigation bar, mobile drawer, and theme switch
+│   │   ├── Hero.jsx        # Banner, registration CTA, and countdown
+│   │   ├── About.jsx       # GDG on Campus MITS & HackInnov8 background
+│   │   ├── Tracks.jsx      # Domain problem statements & categories
+│   │   ├── Timeline.jsx    # Step-by-step hackathon event roadmap
+│   │   ├── Prizes.jsx      # Prize tiers and swag breakdown
+│   │   ├── Sponsors.jsx    # Community partners and sponsor grid
+│   │   ├── FAQ.jsx         # Collapsible Q&A accordion
+│   │   └── Footer.jsx      # Social handles, community links, and copyright
+│   ├── data/               # Content configurations (tracks, timeline, FAQs)
+│   ├── styles/             # Global styles and Tailwind imports
+│   ├── App.jsx             # Main layout & component assembly
+│   └── main.jsx            # React root mount
+├── .gitignore
+├── index.html
+├── package.json
+├── tailwind.config.js
+├── vite.config.js
+└── README.md
