@@ -1,89 +1,46 @@
-import React, { useState } from 'react';
-import { motion, useScroll, useSpring } from 'framer-motion';
-import { ThemeProvider } from './context/ThemeContext';
-import { Navbar } from './components/Navbar';
-import { Hero } from './components/Hero';
-import { MarqueeTicker } from './components/MarqueeTicker';
-import { About } from './components/About';
-import { Tracks } from './components/Tracks';
-import { Timeline } from './components/Timeline';
-import { Prizes } from './components/Prizes';
-import { Rules } from './components/Rules';
-import { RegisterBanner } from './components/RegisterBanner';
-import { FAQ } from './components/FAQ';
-import { Footer } from './components/Footer';
-import { RegisterModal } from './components/RegisterModal';
+import { SmoothScrollProvider } from './components/layout/SmoothScrollProvider'
+import { ScrollProgressBar } from './components/layout/ScrollProgressBar'
+import { GridOverlay } from './components/layout/GridOverlay'
+import { NoiseOverlay } from './components/layout/NoiseOverlay'
+import { Navbar } from './components/layout/Navbar'
+import { Footer } from './components/layout/Footer'
+import { Hero } from './components/sections/Hero'
+import { About } from './components/sections/About'
+import { Tracks } from './components/sections/Tracks'
+import { Timeline } from './components/sections/Timeline'
+import { Prizes } from './components/sections/Prizes'
+import { Judging } from './components/sections/Judging'
+import { Rules } from './components/sections/Rules'
+import { Faq } from './components/sections/Faq'
+import { Register } from './components/sections/Register'
 
-function AppContent() {
-  const [isRegisterOpen, setIsRegisterOpen] = useState(false);
-
-  // Top Page Scroll Progress Indicator
-  const { scrollYProgress } = useScroll();
-  const scaleX = useSpring(scrollYProgress, {
-    stiffness: 100,
-    damping: 30,
-    restDelta: 0.001
-  });
-
+function App() {
   return (
-    <div className="relative min-h-screen bg-white dark:bg-dark-bg text-gray-900 dark:text-gray-100 transition-colors duration-400 selection:bg-google-blue selection:text-white">
-      
-      {/* Scroll Progress Bar at Top */}
-      <motion.div
-        className="fixed top-0 left-0 right-0 h-1 bg-gradient-to-r from-google-blue via-google-red via-google-yellow to-google-green z-50 origin-left"
-        style={{ scaleX }}
-      />
-
-      {/* Glass Navbar */}
-      <Navbar onOpenRegister={() => setIsRegisterOpen(true)} />
-
-      {/* Main Page Content */}
-      <main>
-        {/* 1. Hero Section with Three.js 3D Background & Live Countdown */}
-        <Hero onOpenRegister={() => setIsRegisterOpen(true)} />
-
-        {/* 2. High-energy Marquee Ticker */}
-        <MarqueeTicker />
-
-        {/* 3. About GDG MITS & Highlights */}
+    <SmoothScrollProvider>
+      <a
+        href="#main"
+        className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-md focus:bg-accent focus:px-4 focus:py-2 focus:text-on-accent"
+      >
+        Skip to content
+      </a>
+      <GridOverlay />
+      <NoiseOverlay />
+      <ScrollProgressBar />
+      <Navbar />
+      <main id="main">
+        <Hero />
         <About />
-
-        {/* 4. Hackathon Problem Tracks (6 Interactive 3D Tilt Cards) */}
-        <Tracks onOpenRegister={() => setIsRegisterOpen(true)} />
-
-        {/* 5. 36-Hour Runtime Timeline / Schedule */}
+        <Tracks />
         <Timeline />
-
-        {/* 6. Prizes & Swag (3D Podium Design) */}
         <Prizes />
-
-        {/* 7. Rules & Judging Criteria Rubric */}
+        <Judging />
         <Rules />
-
-        {/* 8. Registration CTA Banner */}
-        <RegisterBanner onOpenRegister={() => setIsRegisterOpen(true)} />
-
-        {/* 9. FAQ Section */}
-        <FAQ />
+        <Faq />
+        <Register />
       </main>
-
-      {/* 10. Footer & Community Links */}
       <Footer />
-
-      {/* Registration Modal Dialog */}
-      <RegisterModal
-        isOpen={isRegisterOpen}
-        onClose={() => setIsRegisterOpen(false)}
-      />
-
-    </div>
-  );
+    </SmoothScrollProvider>
+  )
 }
 
-export default function App() {
-  return (
-    <ThemeProvider>
-      <AppContent />
-    </ThemeProvider>
-  );
-}
+export default App

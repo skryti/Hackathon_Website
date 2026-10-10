@@ -1,28 +1,52 @@
 <!doctype html>
-<html lang="en" class="dark">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='80' font-family='monospace' font-weight='bold'><tspan fill='%234285F4'>&lt;</tspan><tspan fill='%23EA4335'>G</tspan><tspan fill='%23FBBC05'>D</tspan><tspan fill='%2334A853'>G</tspan><tspan fill='%234285F4'>/&gt;</tspan></text></svg>" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="INNOV8-MITS 2026: 36 Hours of Code, Chaos & Creation. A premier 36-hour National Hackathon organized by Google Developer Groups On Campus • MITS-DU Gwalior. Total prize pool ₹1,00,000+." />
-    <meta name="keywords" content="Hackathon, INNOV8-MITS, GDG On Campus, MITS-DU Gwalior, Google Developers, Coding Sprint, Web3, AI, IoT, MedTech" />
-    <meta name="author" content="GDG On Campus MITS-DU Gwalior" />
-    
-    <!-- Open Graph / Social Sharing -->
+    <meta name="theme-color" content="#070709" />
+    <meta name="color-scheme" content="dark light" />
+
+    <title>INNOV8-MITS 2026 — 36 Hours of Code, Chaos &amp; Creation | GDG On Campus MITS-DU Gwalior</title>
+    <meta
+      name="description"
+      content="INNOV8-MITS 2026 — A cutting-edge 36-Hour National College Hackathon organized by Google Developer Groups On Campus • MITS-DU Gwalior. 500+ Hackers, ₹1,00,000+ Prize Pool, 6 Disruptive Tracks."
+    />
+
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="INNOV8-MITS 2026 | 36-Hour National Hackathon" />
-    <meta property="og:description" content="36 Hours of Code, Chaos & Creation. Compete for ₹1,00,000+ in prizes with 500+ hackers at MITS-DU Gwalior." />
-    <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:title" content="INNOV8-MITS 2026 | GDG On Campus MITS-DU" />
-    
-    <!-- Google Fonts Preconnect -->
+    <meta property="og:title" content="INNOV8-MITS 2026 — GDG On Campus MITS-DU Gwalior" />
+    <meta
+      property="og:description"
+      content="36 Hours of Code, Chaos &amp; Creation. Build bold, disruptive real-world solutions."
+    />
+    <meta property="og:image" content="/og.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Inter:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Inter+Tight:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
 
-    <title>INNOV8-MITS 2026 | 36-Hour National Hackathon | GDG On Campus MITS-DU Gwalior</title>
+    <script>
+      // Pre-paint theme resolution — prevents a flash of the wrong theme.
+      ;(function () {
+        try {
+          var s = localStorage.getItem('halflight-theme')
+          var dark = s
+            ? s === 'dusk'
+            : !window.matchMedia('(prefers-color-scheme: light)').matches
+          if (dark) document.documentElement.classList.add('dark')
+          document.documentElement.style.colorScheme = dark ? 'dark' : 'light'
+        } catch (e) {
+          document.documentElement.classList.add('dark')
+        }
+      })()
+    </script>
   </head>
-  <body class="bg-[#070709] text-white selection:bg-[#4285F4] selection:text-white">
+  <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>

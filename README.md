@@ -1,32 +1,66 @@
-# React + TypeScript + Vite
+# HALFLIGHT 36
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+> Thirty-six hours between dusk and the second dawn.
 
-Currently, two official plugins are available:
+Recruitment-task website for a fictional 36-hour college hackathon, built as a
+frontend-only React site. No backend — registration happens through an
+external Google Form.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Tech stack
 
-## React Compiler
+- **React 19 + TypeScript + Vite** — app shell and tooling
+- **Tailwind CSS v4** (via `@tailwindcss/vite`) — all styling, theme tokens
+  defined as CSS custom properties in `src/index.css`
+- **Framer Motion** — scroll reveals, the horizontal-scroll timeline, the
+  hero's mount sequence and parallax
+- **Three.js + React Three Fiber + drei** — the 3D "Terminator Globe" in the
+  hero (custom shader day/night boundary, particle field, orbiting track
+  satellites)
+- **Lenis** — smooth scrolling
+- **lucide-react** — icon set (plus three hand-drawn inline SVG brand marks
+  in the footer, since lucide dropped brand/logo glyphs)
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Before you launch this for real
 
-## Expanding the Oxlint configuration
+Open `src/data/event.ts` and replace:
 
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
+- `registrationUrl` — currently `https://forms.gle/placeholder`. Point this
+  at your real Google Form; it's read from this one place everywhere on the
+  site (hero, navbar, register section).
+- Dates, venue, stats, and contact emails if you're not actually running
+  this exact fictional event.
 
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
+All other copy (schedule, tracks, rules, judging, prizes, FAQ, socials) lives
+in `src/data/*.ts` — edit there, not in the components.
+
+## Development
+
+```bash
+npm install
+npm run dev      # starts the Vite dev server
+npm run build    # type-checks + production build to dist/
+npm run preview  # preview the production build locally
 ```
 
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+## Project structure
+
+```
+src/
+├── components/
+│   ├── layout/     # Navbar, Footer, ThemeToggle, SectionShell, scroll chrome
+│   ├── sections/   # One file per page section (Hero, About, Tracks, ...)
+│   ├── three/      # The 3D hero scene (Terminator Globe, particles, satellites)
+│   └── ui/         # Shared primitives (Button, GlassCard, Reveal, Countdown, ...)
+├── context/        # Theme (dusk/dawn) context
+├── data/           # All copy and content, typed — single source of truth
+├── hooks/          # useLenis, useCountdown, useDeviceTier, etc.
+├── lib/            # Motion variants, Tailwind class helper, Three.js color bridge
+└── types/          # Shared TypeScript types
+```
+
+## Theme
+
+Dark mode is **DUSK** (the default), light mode is **DAWN** — the toggle in
+the navbar is themed as a sunrise, not a generic switch. Resolution order on
+load: an explicit previous choice (`localStorage`) → the OS's
+`prefers-color-scheme` → DUSK by default.
