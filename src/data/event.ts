@@ -1,6 +1,6 @@
 export const EVENT = {
-  name: 'INNOV8-MITS 2026',
-  shortName: "INNOV8-MITS '26",
+  name: 'HackInnov8 2026',
+  shortName: 'HackInnov8',
   edition: 'National Hackathon Edition',
   tagline: '36 Hours of Code, Chaos & Creation',
   shortTagline: 'Build bold, disruptive real-world solutions.',

@@ -31,7 +31,7 @@ export function About() {
 
           {/* Centered Deck / Subtitle matching Image 1 */}
           <p className="mt-4 max-w-3xl mx-auto text-center text-sm sm:text-base text-gray-600 dark:text-gray-300 leading-relaxed">
-            Organized by <strong className="text-gray-900 dark:text-white font-bold">GDG On Campus MITS–DU Gwalior</strong>, INNOV8–MITS 2026 is designed as an incubator for breakthrough ideas. We bring together developers, designers, and visionaries to convert raw passion into production-ready software and hardware prototypes in 36 hours.
+            Organized by <strong className="text-gray-900 dark:text-white font-bold">GDG On Campus MITS–DU Gwalior</strong>, HackInnov8 2026 is designed as an incubator for breakthrough ideas. We bring together developers, designers, and visionaries to convert raw passion into production-ready software and hardware prototypes in 36 hours.
           </p>
         </Reveal>
 

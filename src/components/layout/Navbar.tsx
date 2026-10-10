@@ -66,7 +66,7 @@ export function Navbar() {
             <GDGLogo />
             <div className="hidden xl:flex items-center gap-1.5 pl-2 border-l border-border">
               <span className="font-display font-extrabold text-sm tracking-tight grad-google-animated">
-                INNOV8-MITS
+                HackInnov8
               </span>
               <span className="rounded bg-google-blue/15 px-1.5 py-0.5 font-mono text-[10px] font-bold text-google-blue">
                 '26

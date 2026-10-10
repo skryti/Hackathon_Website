@@ -72,7 +72,7 @@ export const SPECIAL_PRIZES: SpecialPrize[] = [
 
 export const EVERYONE_GETS = [
   'Official GDG On Campus Certificate of Participation',
-  'Exclusive INNOV8-MITS 2026 Holographic Sticker Pack',
+  'Exclusive HackInnov8 Holographic Sticker Pack',
   'Access to Google Cloud Skills Boost credits & perks',
   'Complimentary meals and refreshments throughout the event',
   'Direct access to GDG mentor network & developer ecosystem',

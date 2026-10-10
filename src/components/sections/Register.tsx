@@ -88,7 +88,7 @@ export function Register() {
         <h2 id="register-heading" className="mt-6 font-display text-3xl sm:text-4xl md:text-5xl font-black tracking-tight text-center">
           <span className="text-gray-900 dark:text-white">Are You Ready To </span>
           <span className="bg-gradient-to-r from-[#4285F4] via-[#EA4335] via-[#FBBC05] to-[#34A853] bg-clip-text text-transparent font-black">
-            INNOV8?
+            HackInnov8?
           </span>
         </h2>
 

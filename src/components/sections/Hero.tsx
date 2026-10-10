@@ -94,14 +94,15 @@ export function Hero() {
             </span>
           </motion.div>
 
-          {/* Main Title: INNOV8-MITS - Old size, no '26, pure solid white in dark mode */}
+          {/* Main Title: HackInnov8 styled per reference image */}
           <motion.div style={reducedMotion ? undefined : { y: headlineY }} className="mt-6">
             <h1
               id="hero-heading"
               className="font-display text-[clamp(2.75rem,8vw,5.75rem)] font-black tracking-tight leading-[0.96] select-none"
             >
-              <span className="block text-gray-900 dark:text-white drop-shadow-sm font-black">
-                INNOV8-MITS
+              <span className="block drop-shadow-sm font-black">
+                <span className="text-gray-900 dark:text-white">Hack</span>
+                <span className="bg-gradient-to-r from-[#2563eb] via-[#6366f1] to-[#c084fc] bg-clip-text text-transparent">Innov8</span>
               </span>
               <span className="block text-txt-2 text-[clamp(1.5rem,4vw,2.75rem)] font-bold tracking-tight mt-3">
                 36 Hours of Code, Chaos &amp; Creation

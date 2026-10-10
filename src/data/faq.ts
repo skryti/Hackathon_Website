@@ -2,7 +2,7 @@ import type { FaqItem } from '../types'
 
 export const FAQ: FaqItem[] = [
   {
-    question: 'Who can participate in INNOV8-MITS 2026?',
+    question: 'Who can participate in HackInnov8 2026?',
     answer:
       'Students from all colleges, universities, and academic years across India are warmly welcome! Whether you are a first-year student writing your first lines of code or a final-year veteran engineer, there is a place for you.',
   },
@@ -39,6 +39,6 @@ export const FAQ: FaqItem[] = [
   {
     question: 'What if I am a beginner?',
     answer:
-      'INNOV8-MITS is beginner-friendly! We have dedicated mentor desk rotations and technical guidance throughout the build sprint.',
+      'HackInnov8 is beginner-friendly! We have dedicated mentor desk rotations and technical guidance throughout the build sprint.',
   },
 ]

@@ -60,7 +60,7 @@ export function Footer() {
             </p>
             <div className="mt-6 flex items-center gap-1.5 font-mono text-xs text-txt-3">
               <span className="h-2 w-2 rounded-full bg-google-green animate-pulse" />
-              <span>INNOV8-MITS 2026 EDITION</span>
+              <span>HackInnov8 2026 EDITION</span>
             </div>
           </Reveal>
 
