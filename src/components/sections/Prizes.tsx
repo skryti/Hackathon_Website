@@ -1,12 +1,55 @@
 import { motion } from 'framer-motion'
+import { Award, Sparkles, Cloud, Coffee, Users, CheckCircle2 } from 'lucide-react'
 import { SectionShell } from '../layout/SectionShell'
 import { Reveal } from '../ui/Reveal'
 import { Stagger } from '../ui/Stagger'
-import { Chip } from '../ui/Chip'
 import { PrizeCard } from './PrizeCard'
 import { usePrefersReducedMotion } from '../../hooks/usePrefersReducedMotion'
 import { EASE_OUT, VIEWPORT_ONCE } from '../../lib/motion'
-import { PODIUM_PRIZES, SPECIAL_PRIZES, EVERYONE_GETS } from '../../data/prizes'
+import { PODIUM_PRIZES, SPECIAL_PRIZES } from '../../data/prizes'
+
+const PARTICIPANT_PERKS = [
+  {
+    title: 'Official Certificate',
+    desc: 'Official GDG On Campus Certificate of Participation for every team member.',
+    icon: Award,
+    border: 'border-google-blue/30',
+    bg: 'bg-google-blue/10',
+    text: 'text-google-blue',
+  },
+  {
+    title: 'Holographic Swag',
+    desc: 'Exclusive HackInnov8 holographic stickers, collectible badges & kit.',
+    icon: Sparkles,
+    border: 'border-google-yellow/30',
+    bg: 'bg-google-yellow/10',
+    text: 'text-google-yellow',
+  },
+  {
+    title: 'Google Cloud Perks',
+    desc: 'Access to Google Cloud Skills Boost credits, cloud sandbox & API perks.',
+    icon: Cloud,
+    border: 'border-google-green/30',
+    bg: 'bg-google-green/10',
+    text: 'text-google-green',
+  },
+  {
+    title: 'Meals & Hospitality',
+    desc: 'Complimentary catered meals, refreshments, and snacks for all 36 hours.',
+    icon: Coffee,
+    border: 'border-google-red/30',
+    bg: 'bg-google-red/10',
+    text: 'text-google-red',
+  },
+  {
+    title: 'GDG Mentor Network',
+    desc: 'Direct 1-on-1 access to Google Developer Experts and tech mentors.',
+    icon: Users,
+    border: 'border-google-blue/30',
+    bg: 'bg-google-blue/10',
+    text: 'text-google-blue',
+  },
+]
 
 export function Prizes() {
   const reducedMotion = usePrefersReducedMotion()
@@ -79,17 +122,56 @@ export function Prizes() {
         </Stagger>
       </div>
 
-      {/* All Participants Get */}
-      <Reveal className="mt-16 flex flex-wrap items-center justify-center gap-3 text-center rounded-2xl border border-border/80 bg-surface/50 p-6 max-w-4xl mx-auto" y={16}>
-        <span className="font-mono text-xs font-bold uppercase tracking-wider text-google-blue">
-          ALL PARTICIPANTS RECEIVE:
-        </span>
-        <div className="flex flex-wrap items-center justify-center gap-2 mt-2 sm:mt-0">
-          {EVERYONE_GETS.map((item) => (
-            <Chip key={item} tone="neutral">
-              {item}
-            </Chip>
-          ))}
+      {/* All Participants Receive — Modern Perks Bento Card */}
+      <Reveal className="mt-20 max-w-5xl mx-auto w-full" y={20}>
+        <div className="relative overflow-hidden rounded-3xl border border-border/80 bg-surface/70 p-6 sm:p-8 backdrop-blur-md shadow-lg shadow-black/5 dark:shadow-black/20">
+          {/* Section Header */}
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-6 border-b border-border/60">
+            <div className="flex items-center gap-2.5">
+              <span className="flex h-2.5 w-2.5 rounded-full bg-google-blue animate-pulse" />
+              <span className="font-mono text-xs sm:text-sm font-bold uppercase tracking-widest text-google-blue">
+                ALL PARTICIPANTS RECEIVE
+              </span>
+            </div>
+            <div className="inline-flex items-center gap-1.5 font-mono text-xs text-txt-3">
+              <span className="h-1.5 w-1.5 rounded-full bg-google-green" />
+              <span>100% Free · Guaranteed for every accepted hacker</span>
+            </div>
+          </div>
+
+          {/* 5-Card Modern Perks Bento Grid */}
+          <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3.5">
+            {PARTICIPANT_PERKS.map((perk) => {
+              const Icon = perk.icon
+              return (
+                <div
+                  key={perk.title}
+                  className="group relative flex flex-col justify-between rounded-2xl border border-border/70 bg-bg-elev/50 p-4 transition-all duration-300 hover:border-border-strong hover:bg-surface hover:-translate-y-1 hover:shadow-md"
+                >
+                  <div>
+                    <div
+                      className={`flex h-10 w-10 items-center justify-center rounded-xl border ${perk.border} ${perk.bg} ${perk.text} mb-3.5 transition-transform duration-300 group-hover:scale-110`}
+                    >
+                      <Icon size={20} aria-hidden />
+                    </div>
+                    <h4 className="font-display text-sm font-bold text-gray-900 dark:text-white leading-snug">
+                      {perk.title}
+                    </h4>
+                    <p className="mt-1.5 text-xs text-txt-2 leading-relaxed">
+                      {perk.desc}
+                    </p>
+                  </div>
+
+                  <div className="mt-4 pt-3 border-t border-border/40 flex items-center justify-between font-mono text-[11px]">
+                    <span className="inline-flex items-center gap-1 text-google-green font-semibold">
+                      <CheckCircle2 size={13} className="text-google-green" />
+                      <span>Included</span>
+                    </span>
+                  </div>
+                </div>
+              )
+            })}
+          </div>
         </div>
       </Reveal>
     </SectionShell>

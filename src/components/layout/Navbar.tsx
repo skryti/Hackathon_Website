@@ -68,9 +68,6 @@ export function Navbar() {
               <span className="font-display font-extrabold text-sm tracking-tight grad-google-animated">
                 HackInnov8
               </span>
-              <span className="rounded bg-google-blue/15 px-1.5 py-0.5 font-mono text-[10px] font-bold text-google-blue">
-                '26
-              </span>
             </div>
           </a>
 

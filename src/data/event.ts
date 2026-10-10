@@ -7,9 +7,9 @@ export const EVENT = {
   club: 'Google Developer Groups On Campus',
   organizer: 'Google Developer Groups On Campus • MITS-DU Gwalior',
   institution: 'Madhav Institute of Technology & Science (MITS-DU), Gwalior',
-  venue: 'Conclave Hall, MITS Gwalior',
+  venue: 'Conclave Centre, MITS Gwalior',
   venueFull:
-    'Conclave Hall · Madhav Institute of Technology & Science (MITS), Racecourse Road, Gwalior, Madhya Pradesh 474005',
+    'Conclave Centre · Madhav Institute of Technology & Science (MITS), Racecourse Road, Gwalior, Madhya Pradesh 474005',
   dateRangeLabel: '10 NOVEMBER 2026',
   doorsOpenISO: '2026-11-10T09:00:00+05:30',
   clockStartISO: '2026-11-10T10:00:00+05:30',
@@ -27,7 +27,7 @@ export const EVENT = {
   marqueeItems: [
     '36 HOURS OF CODE, CHAOS & CREATION',
     '10 NOVEMBER 2026',
-    'CONCLAVE HALL, MITS GWALIOR',
+    'CONCLAVE CENTRE, MITS GWALIOR',
     '500+ HACKERS',
     '₹35,000+ CASH PRIZES (20K / 10K / 5K)',
     'GDG ON CAMPUS MITS-DU GWALIOR',

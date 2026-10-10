@@ -7,6 +7,7 @@ import { usePrefersReducedMotion } from '../../hooks/usePrefersReducedMotion'
 interface TiltCardProps {
   children: ReactNode
   className?: string
+  contentClassName?: string
   glowColor?: 'blue' | 'red' | 'yellow' | 'green' | 'google'
   maxTilt?: number
   scaleOnHover?: number
@@ -24,6 +25,7 @@ const GLOW_MAP = {
 export function TiltCard({
   children,
   className,
+  contentClassName,
   glowColor = 'google',
   maxTilt = 12,
   scaleOnHover = 1.02,
@@ -119,7 +121,7 @@ export function TiltCard({
         />
 
         {/* Content layer */}
-        <div className="relative z-10 h-full w-full">{children}</div>
+        <div className={cn('relative z-10 h-full w-full', contentClassName)}>{children}</div>
       </motion.div>
     </div>
   )

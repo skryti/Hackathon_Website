@@ -86,14 +86,14 @@ export function Register() {
         </div>
 
         <h2 id="register-heading" className="mt-6 font-display text-3xl sm:text-4xl md:text-5xl font-black tracking-tight text-center">
-          <span className="text-gray-900 dark:text-white">Are You Ready To </span>
+          <span className="text-gray-900 dark:text-white">Are You Ready For </span>
           <span className="bg-gradient-to-r from-[#4285F4] via-[#EA4335] via-[#FBBC05] to-[#34A853] bg-clip-text text-transparent font-black">
             HackInnov8?
           </span>
         </h2>
 
         <p className="mt-6 max-w-2xl text-body-lg text-txt-2 leading-relaxed">
-          Don&apos;t miss the flagship 36-hour sprint at Conclave Hall, MITS Gwalior. Team registrations are 100% free with complimentary stay, meals, mentorship, and ₹35,000+ in cash prizes (20k / 10k / 5k).
+          Don&apos;t miss the flagship 36-hour sprint at Conclave Centre, MITS Gwalior. Team registrations are 100% free with complimentary stay, meals, mentorship, and ₹35,000+ in cash prizes (20k / 10k / 5k).
         </p>
 
         {/* Primary CTA with Confetti Burst */}
@@ -118,7 +118,7 @@ export function Register() {
 
         <div className="mt-4 inline-flex items-center gap-2 font-mono text-xs text-txt-3">
           <Clock size={13} className="text-google-yellow" />
-          <span>Hackathon Commences: 10 November 2026 · Conclave Hall, MITS Gwalior</span>
+          <span>Hackathon Commences: 10 November 2026 · Conclave Centre, MITS Gwalior</span>
         </div>
 
         {/* Perks Grid */}

@@ -78,7 +78,7 @@ export function Countdown() {
       <div className="flex flex-wrap items-center justify-center gap-2 font-mono text-[11px] sm:text-xs text-txt-3 tracking-wide mt-1">
         <span className="text-google-blue font-bold">10 NOVEMBER 2026</span>
         <span>•</span>
-        <span className="text-txt-2 font-semibold">CONCLAVE HALL, MITS GWALIOR</span>
+        <span className="text-txt-2 font-semibold">CONCLAVE CENTRE, MITS GWALIOR</span>
       </div>
     </div>
   )

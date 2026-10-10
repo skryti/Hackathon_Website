@@ -56,9 +56,10 @@ export function TrackCard({ track, delay = 0, onSelect }: TrackCardProps) {
       <TiltCard
         glowColor={track.googleColor}
         className="group cursor-pointer p-7 flex flex-col justify-between h-full rounded-3xl border border-border/80 bg-surface/60 transition-all hover:border-border-strong hover:shadow-xl"
+        contentClassName="flex flex-col justify-between h-full"
         onClick={() => onSelect(track)}
       >
-        <div>
+        <div className="flex flex-col flex-1">
           {/* Header row: Left = Icon Box, Right = Code Pill Badge */}
           <div className="flex items-center justify-between">
             <div
@@ -71,24 +72,24 @@ export function TrackCard({ track, delay = 0, onSelect }: TrackCardProps) {
             </span>
           </div>
 
-          {/* Uppercase Category Eyebrow in Track Color */}
-          <div className={`mt-6 font-mono text-[11px] sm:text-xs font-bold uppercase tracking-wider ${styling.text}`}>
+          {/* Uppercase Category Eyebrow in Track Color - fixed height so all titles start on the same line */}
+          <div className={`mt-5 font-mono text-[11px] sm:text-xs font-bold uppercase tracking-wider h-10 flex items-center leading-snug ${styling.text}`}>
             {track.tagline}
           </div>
 
-          {/* Track Title */}
-          <h3 className="mt-2 font-display text-2xl font-bold text-txt group-hover:text-google-blue transition-colors">
+          {/* Track Title - fixed height so all descriptions start on the same line */}
+          <h3 className="mt-2 font-display text-xl sm:text-2xl font-bold text-txt group-hover:text-google-blue transition-colors h-16 flex items-start leading-tight">
             {track.name}
           </h3>
 
-          {/* Track Description */}
-          <p className="mt-3 text-body-sm text-txt-2 leading-relaxed">
+          {/* Track Description - uniform min-height so content takes equal space */}
+          <p className="mt-3 text-body-sm text-txt-2 leading-relaxed min-h-[5.5rem] flex-1">
             {track.oneLiner}
           </p>
         </div>
 
-        {/* Action footer */}
-        <div className="mt-8 flex items-center justify-between border-t border-border/60 pt-4">
+        {/* Action footer - pinned to bottom on the exact same horizontal line */}
+        <div className="mt-6 flex items-center justify-between border-t border-border/60 pt-4">
           <span className="font-mono text-xs text-txt-3">
             {track.problemStatements.length} Challenges Available
           </span>

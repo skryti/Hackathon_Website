@@ -94,15 +94,14 @@ export function Hero() {
             </span>
           </motion.div>
 
-          {/* Main Title: HackInnov8 styled per reference image */}
+          {/* Main Title: HackInnov8 full white in dark mode */}
           <motion.div style={reducedMotion ? undefined : { y: headlineY }} className="mt-6">
             <h1
               id="hero-heading"
               className="font-display text-[clamp(2.75rem,8vw,5.75rem)] font-black tracking-tight leading-[0.96] select-none"
             >
-              <span className="block drop-shadow-sm font-black">
-                <span className="text-gray-900 dark:text-white">Hack</span>
-                <span className="bg-gradient-to-r from-[#2563eb] via-[#6366f1] to-[#c084fc] bg-clip-text text-transparent">Innov8</span>
+              <span className="block text-gray-900 dark:text-white drop-shadow-sm font-black">
+                HackInnov8
               </span>
               <span className="block text-txt-2 text-[clamp(1.5rem,4vw,2.75rem)] font-bold tracking-tight mt-3">
                 36 Hours of Code, Chaos &amp; Creation
@@ -117,7 +116,7 @@ export function Hero() {
               </div>
               <div className="inline-flex items-center gap-2 rounded-full border border-google-red/40 bg-google-red/15 px-4 py-1.5 font-mono text-xs sm:text-sm font-bold text-google-red shadow-md backdrop-blur-sm">
                 <MapPin size={15} className="text-google-red" />
-                <span>CONCLAVE HALL, MITS GWALIOR</span>
+                <span>CONCLAVE CENTRE, MITS GWALIOR</span>
               </div>
               <div className="inline-flex items-center gap-2 rounded-full border border-google-green/40 bg-google-green/15 px-3.5 py-1.5 font-mono text-xs font-bold text-google-green shadow-sm backdrop-blur-sm">
                 <span className="h-2 w-2 rounded-full bg-google-green animate-pulse" />

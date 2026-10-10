@@ -14,7 +14,7 @@ import { usePrefersReducedMotion } from '../../hooks/usePrefersReducedMotion'
 import { EASE_OUT } from '../../lib/motion'
 
 const MARQUEE_TEXT =
-  '36 HOURS • 10 NOVEMBER 2026 • CONCLAVE HALL, MITS GWALIOR • ₹35,000+ CASH PRIZES (20K / 10K / 5K) • 500+ HACKERS • GDG ON CAMPUS MITS • '
+  '36 HOURS • 10 NOVEMBER 2026 • CONCLAVE CENTRE, MITS GWALIOR • ₹35,000+ CASH PRIZES (20K / 10K / 5K) • 500+ HACKERS • GDG ON CAMPUS MITS • '
 
 const SOCIAL_ICON_MAP: Record<string, IconType | LucideIcon> = {
   Instagram: FaInstagram,

@@ -9,12 +9,12 @@ export const FAQ: FaqItem[] = [
   {
     question: 'Is accommodation and food provided?',
     answer:
-      'Yes! Complimentary meals, refreshments, and resting spaces at Conclave Hall, MITS Gwalior are provided throughout the hackathon for all participants.',
+      'Yes! Complimentary meals, refreshments, and resting spaces at Conclave Centre, MITS Gwalior are provided throughout the hackathon for all participants.',
   },
   {
     question: 'Where is the venue and what is the date?',
     answer:
-      'The hackathon takes place at Conclave Hall, MITS Gwalior starting on 10 November 2026.',
+      'The hackathon takes place at Conclave Centre, MITS Gwalior starting on 10 November 2026.',
   },
   {
     question: 'Is it free to register for the hackathon?',
