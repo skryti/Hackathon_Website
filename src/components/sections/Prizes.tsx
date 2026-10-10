@@ -11,7 +11,7 @@ import { PODIUM_PRIZES, SPECIAL_PRIZES } from '../../data/prizes'
 const PARTICIPANT_PERKS = [
   {
     title: 'Official Certificate',
-    desc: 'Official GDG On Campus Certificate of Participation for every team member.',
+    desc: 'Official GDGoC Certificate of Participation for every team member.',
     icon: Award,
     border: 'border-google-blue/30',
     bg: 'bg-google-blue/10',

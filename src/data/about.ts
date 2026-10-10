@@ -1,9 +1,9 @@
 export const ABOUT = {
-  eyebrow: 'PRESENTED BY GDG ON CAMPUS • MITS-DU GWALIOR',
+  eyebrow: 'PRESENTED BY GDGoC • MITS-DU GWALIOR',
   heading: 'Engineered for Builders who Turn Ideas into Breakthroughs.',
   deck: 'Google Developer ecosystem meets Cyber-Futurism. 36 hours of non-stop code, design sprints, and real impact.',
   story: [
-    'Google Developer Groups On Campus • MITS-DU Gwalior was founded to bridge the gap between classroom theory and production-grade engineering. HackInnov8 2026 is our flagship 36-hour national hackathon, bringing together over 500 passionate developers, designers, and innovators under one roof.',
+    'GDGoC • MITS-DU Gwalior was founded to bridge the gap between classroom theory and production-grade engineering. HackInnov8 2026 is our flagship 36-hour national hackathon, bringing together over 500 passionate developers, designers, and innovators under one roof.',
     'For 36 uninterrupted hours, teams dive deep into AI systems, decentralized networks, smart campus automation, medtech, and fintech solutions. Supported by Google Developer Experts, veteran mentors, and industry sponsors, you will prototype, break boundaries, and ship working solutions.',
     'Whether you are building your tenth full-stack application or stepping into your very first hackathon crucible, HackInnov8 provides the ecosystem, compute power, and mentorship to help you turn audacious concepts into reality.',
   ],
@@ -19,7 +19,7 @@ export const ABOUT = {
     {
       title: 'Food, Swag & Hospitality',
       description:
-        'Enjoy complimentary meals, refreshments, t-shirts, stickers, and premium GDG swag kits.',
+        'Enjoy complimentary meals, refreshments, t-shirts, stickers, and premium GDGoC swag kits.',
       icon: 'Coffee',
       color: 'red' as const,
     },

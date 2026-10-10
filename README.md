@@ -2,7 +2,7 @@
 
   # 🚀 HackInnov8 — Official Hackathon Website
 
-  **The Flagship Hackathon Platform by GDG on Campus — MITS Gwalior**
+  **The Flagship Hackathon Platform by GDGoC — MITS Gwalior**
 
   [![Live Site](https://img.shields.io/badge/Live%20Demo-Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://hackinnov8-gdgoc-mits.vercel.app/)
   [![GitHub Repo](https://img.shields.io/badge/GitHub-Repository-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/skryti/Hackathon_Website)
@@ -23,7 +23,7 @@
 
 ## 📌 Overview
 
-**HackInnov8** is the flagship hackathon organized by **Google Developer Groups on Campus (GDG on Campus)** at **Madhav Institute of Technology & Science (MITS), Gwalior**.
+**HackInnov8** is the flagship hackathon organized by **GDGoC (Google Developer Groups On Campus)** at **Madhav Institute of Technology & Science (MITS), Gwalior**.
 
 This repository contains the source code for the official landing portal. The website is engineered to give participants a fast, interactive experience with details on hackathon tracks, timelines, prize pools, partner tracks, and registration guidelines.
 
@@ -64,7 +64,7 @@ Hackathon_Website/
 │   ├── components/         # Modular React components
 │   │   ├── Navbar.jsx      # Navigation bar, mobile drawer, and theme switch
 │   │   ├── Hero.jsx        # Banner, registration CTA, and countdown
-│   │   ├── About.jsx       # GDG on Campus MITS & HackInnov8 background
+│   │   ├── About.jsx       # GDGoC MITS & HackInnov8 background
 │   │   ├── Tracks.jsx      # Domain problem statements & categories
 │   │   ├── Timeline.jsx    # Step-by-step hackathon event roadmap
 │   │   ├── Prizes.jsx      # Prize tiers and swag breakdown

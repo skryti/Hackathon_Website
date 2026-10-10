@@ -10,7 +10,7 @@ const PERKS = [
   {
     icon: Gift,
     title: '100% Free Participation',
-    desc: 'Zero registration fee. Fully sponsored by Google Developer Groups.',
+    desc: 'Zero registration fee. Fully sponsored by GDGoC & partners.',
   },
   {
     icon: Users,
@@ -20,7 +20,7 @@ const PERKS = [
   {
     icon: ShieldCheck,
     title: 'Food, Swag & Overnight Stay',
-    desc: 'Free meals, continuous energy drinks, rest zones, and GDG merch.',
+    desc: 'Free meals, continuous energy drinks, rest zones, and GDGoC merch.',
   },
 ]
 

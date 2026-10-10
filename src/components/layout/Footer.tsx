@@ -13,8 +13,16 @@ import { useScrollApi } from './SmoothScrollProvider'
 import { usePrefersReducedMotion } from '../../hooks/usePrefersReducedMotion'
 import { EASE_OUT } from '../../lib/motion'
 
-const MARQUEE_TEXT =
-  '36 HOURS • 10 NOVEMBER 2026 • CONCLAVE CENTRE, MITS GWALIOR • ₹35,000+ CASH PRIZES (20K / 10K / 5K) • 500+ HACKERS • GDG ON CAMPUS MITS • '
+const MARQUEE_ITEMS = [
+  { text: '36 HOURS NON-STOP HACKING', dot: 'bg-google-blue' },
+  { text: '10 NOVEMBER 2026', dot: 'bg-google-red' },
+  { text: 'CONCLAVE CENTRE, MITS GWALIOR', dot: 'bg-google-yellow' },
+  { text: '₹35,000+ CASH PRIZES (20K / 10K / 5K)', dot: 'bg-google-green' },
+  { text: '500+ HACKERS', dot: 'bg-google-blue' },
+  { text: 'GDGoC MITS-DU GWALIOR', dot: 'bg-google-red' },
+  { text: 'GOOGLE CLOUD PERKS', dot: 'bg-google-yellow' },
+  { text: '100% FREE REGISTRATION', dot: 'bg-google-green' },
+]
 
 const SOCIAL_ICON_MAP: Record<string, IconType | LucideIcon> = {
   Instagram: FaInstagram,
@@ -42,11 +50,19 @@ export function Footer() {
 
   return (
     <footer id="contact" className="relative border-t border-border bg-bg-elev">
-      {/* Dynamic Marquee Ticker */}
-      <Marquee durationSeconds={32} className="border-b border-border py-4 bg-surface/50">
-        <span className="mx-6 whitespace-nowrap font-display text-display-md font-extrabold uppercase text-txt-3">
-          {MARQUEE_TEXT}
-        </span>
+      {/* Dynamic Sleek Marquee Ticker */}
+      <Marquee durationSeconds={28} className="border-b border-border/80 py-2.5 sm:py-3 bg-surface/60 backdrop-blur-sm">
+        <div className="flex items-center gap-6 px-3">
+          {MARQUEE_ITEMS.map((item, idx) => (
+            <div key={idx} className="inline-flex items-center gap-2.5 whitespace-nowrap">
+              <span className={`h-1.5 w-1.5 rounded-full ${item.dot} shadow-sm`} />
+              <span className="font-mono text-xs sm:text-sm font-semibold tracking-wider text-txt-2 uppercase">
+                {item.text}
+              </span>
+              <span className="ml-3 font-mono text-xs text-txt-3/30 select-none">/</span>
+            </div>
+          ))}
+        </div>
       </Marquee>
 
       <div className="mx-auto max-w-[1280px] px-[clamp(1.25rem,4vw,3.5rem)] py-16">
@@ -55,7 +71,7 @@ export function Footer() {
           <Reveal className="sm:col-span-2 lg:col-span-1">
             <GDGLogo />
             <p className="mt-4 max-w-sm text-body-sm text-txt-2 leading-relaxed">
-              Google Developer Groups On Campus at Madhav Institute of Technology &amp; Science (Deemed to be University), Gwalior.
+              GDGoC at Madhav Institute of Technology &amp; Science (Deemed to be University), Gwalior.
               Empowering students through open tech, peer mentoring, and high-impact hackathons.
             </p>
             <div className="mt-6 flex items-center gap-1.5 font-mono text-xs text-txt-3">
@@ -149,7 +165,7 @@ export function Footer() {
             &copy; 2026 {EVENT.organizer}. All rights reserved.
           </p>
           <p className="flex items-center gap-1.5 font-medium text-txt-2">
-            Made with <span className="text-google-red animate-pulse">❤️</span> by GDG On Campus MITS-DU Gwalior Team.
+            Made with <span className="text-google-red animate-pulse">❤️</span> by GDGoC MITS-DU Gwalior Team.
           </p>
         </div>
       </div>

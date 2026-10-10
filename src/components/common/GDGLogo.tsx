@@ -53,7 +53,7 @@ export function GDGLogo({ compact = false, className, ...props }: GDGLogoProps) 
 
       <div className="flex flex-col text-left leading-tight">
         <div className="flex items-center gap-1 font-display text-sm font-bold tracking-tight text-txt">
-          <span>GDG On Campus</span>
+          <span>GDGoC</span>
           <span className="hidden sm:inline-block h-1.5 w-1.5 rounded-full bg-google-blue" />
         </div>
         <span className="font-mono text-[10px] tracking-wider uppercase text-txt-3">

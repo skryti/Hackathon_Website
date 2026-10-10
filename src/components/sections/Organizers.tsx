@@ -107,7 +107,7 @@ export function Organizers() {
       eyebrow="COMMUNITY LEADERSHIP"
       heading="Organizers"
       gradientWords={['Organizers']}
-      deck="The student leads behind Google Developer Groups On Campus • MITS-DU Gwalior driving HackInnov8 2026."
+      deck="The student leads behind GDGoC • MITS-DU Gwalior driving HackInnov8 2026."
       band="elevated"
     >
       <Stagger className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4" childY={24}>
@@ -121,7 +121,7 @@ export function Organizers() {
         <div className="inline-flex flex-col sm:flex-row items-center justify-center gap-3 rounded-2xl border border-border/80 bg-surface/50 px-6 py-4 backdrop-blur-sm">
           <div className="flex items-center gap-2 text-txt-2 font-mono text-xs">
             <ShieldCheck size={16} className="text-google-blue shrink-0" />
-            <span>Official GDG On Campus Chapter · Madhav Institute of Technology &amp; Science</span>
+            <span>Official GDGoC Chapter · Madhav Institute of Technology &amp; Science</span>
           </div>
           <a
             href="https://gdg.community.dev/gdg-on-campus-madhav-institute-of-technology-science-gwalior-india/"

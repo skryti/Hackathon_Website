@@ -14,7 +14,7 @@ const HeroCanvas = lazy(() =>
   import('../three/HeroCanvas').then((mod) => ({ default: mod.HeroCanvas })),
 )
 
-const BADGE_TEXT = 'PRESENTED BY GDG ON CAMPUS • MITS-DU GWALIOR'
+const BADGE_TEXT = 'PRESENTED BY GDGoC • MITS-DU GWALIOR'
 const SUBTITLE =
   'A 36-Hour National Hackathon to build bold, disruptive real-world solutions. 36 hours of non-stop code, chaos & creation at MITS-DU Gwalior.'
 
