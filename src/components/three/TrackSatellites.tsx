@@ -3,8 +3,6 @@ import { useFrame } from '@react-three/fiber'
 import { useMemo, useRef, useState } from 'react'
 import * as THREE from 'three'
 import { useScrollApi } from '../layout/SmoothScrollProvider'
-import { useTheme } from '../../context/ThemeContext'
-import { getThreeColors } from '../../lib/theme'
 import { TRACKS } from '../../data/tracks'
 import type { Track } from '../../types'
 
@@ -194,14 +192,19 @@ interface Pulse {
   startTime: number
 }
 
+const GOOGLE_COLORS_THREE = [
+  new THREE.Color('#4285F4'), // Blue
+  new THREE.Color('#EA4335'), // Red
+  new THREE.Color('#FBBC05'), // Yellow
+  new THREE.Color('#34A853'), // Green
+]
+
 function PacketPulses({
   tracks,
   reducedMotion,
-  signalColor,
 }: {
   tracks: Track[]
   reducedMotion: boolean
-  signalColor: THREE.Color
 }) {
   const pulses = useRef<Pulse[]>(
     Array.from({ length: 3 }, () => ({ active: false, trackIndex: 0, startTime: 0 })),
@@ -249,6 +252,7 @@ function PacketPulses({
       mesh.visible = true
       mesh.position.lerpVectors(scratchStart, scratchEnd, progress)
       const material = mesh.material as THREE.MeshBasicMaterial
+      material.color.copy(GOOGLE_COLORS_THREE[pulse.trackIndex % GOOGLE_COLORS_THREE.length])
       material.opacity = 1 - progress
     })
   })
@@ -259,7 +263,7 @@ function PacketPulses({
         <mesh key={i} ref={(ref) => { meshRefs.current[i] = ref }} visible={false}>
           <sphereGeometry args={[0.045, 8, 8]} />
           <meshBasicMaterial
-            color={signalColor}
+            color="#4285F4"
             transparent
             opacity={0}
             toneMapped={false}
@@ -273,10 +277,8 @@ function PacketPulses({
 }
 
 export function TrackSatellites({ maxCount = 6, reducedMotion = false }: TrackSatellitesProps) {
-  const { theme } = useTheme()
   const { scrollTo } = useScrollApi()
   const tracks = useMemo(() => TRACKS.slice(0, maxCount), [maxCount])
-  const signalColor = useMemo(() => getThreeColors(theme).signal, [theme])
 
   const handleScrollTo = (hash: string) => scrollTo(hash, { offset: -88 })
 
@@ -287,12 +289,12 @@ export function TrackSatellites({ maxCount = 6, reducedMotion = false }: TrackSa
           key={track.id}
           track={track}
           phaseOffset={(i / tracks.length) * Math.PI * 2}
-          signalColor={signalColor}
+          signalColor={GOOGLE_COLORS_THREE[i % GOOGLE_COLORS_THREE.length]}
           reducedMotion={reducedMotion}
           onScrollTo={handleScrollTo}
         />
       ))}
-      <PacketPulses tracks={tracks} reducedMotion={reducedMotion} signalColor={signalColor} />
+      <PacketPulses tracks={tracks} reducedMotion={reducedMotion} />
     </group>
   )
 }
