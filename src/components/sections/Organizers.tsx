@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { ArrowUpRight, ExternalLink, ShieldCheck } from 'lucide-react'
+import { ArrowUpRight, ExternalLink, ShieldCheck, Code2 } from 'lucide-react'
 import { SectionShell } from '../layout/SectionShell'
 import { Reveal } from '../ui/Reveal'
 import { Stagger } from '../ui/Stagger'
@@ -132,6 +132,25 @@ export function Organizers() {
             <span>Visit Community Portal</span>
             <ExternalLink size={13} />
           </a>
+        </div>
+      </Reveal>
+
+      {/* Developed By Sanskriti Yadav - Modern & Stylish Centered Badge */}
+      <Reveal className="mt-5 text-center" y={16}>
+        <div className="inline-flex items-center gap-3 rounded-full border border-white/[0.12] bg-[#0c1017]/80 px-6 py-2.5 backdrop-blur-md shadow-xl shadow-black/30 transition-all duration-300 hover:border-google-blue/40 hover:bg-[#0c1017]">
+          <div className="flex items-center gap-1.5" aria-hidden="true">
+            <span className="h-2 w-2 rounded-full bg-google-blue animate-pulse" />
+            <span className="h-2 w-2 rounded-full bg-google-red" />
+            <span className="h-2 w-2 rounded-full bg-google-yellow" />
+            <span className="h-2 w-2 rounded-full bg-google-green" />
+          </div>
+          <span className="font-mono text-xs text-txt-3 uppercase tracking-wider font-semibold">
+            Developed By
+          </span>
+          <span className="font-display text-sm sm:text-base font-black tracking-tight text-white">
+            Sanskriti Yadav
+          </span>
+          <Code2 size={16} className="text-google-blue ml-0.5" />
         </div>
       </Reveal>
     </SectionShell>
