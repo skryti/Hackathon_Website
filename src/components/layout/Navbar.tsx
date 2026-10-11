@@ -9,6 +9,7 @@ import { MobileMenu } from './MobileMenu'
 import { GDGLogo } from '../common/GDGLogo'
 import { useActiveSection } from '../../hooks/useActiveSection'
 import { triggerGoogleConfetti } from '../../lib/confetti'
+import { triggerGoogleEasterEgg } from '../../lib/googleEasterEgg'
 import { cn } from '../../lib/cn'
 import { EASE_OUT } from '../../lib/motion'
 
@@ -35,6 +36,7 @@ export function Navbar() {
   const handleLogoClick = (event: MouseEvent<HTMLAnchorElement>) => {
     event.preventDefault()
     scrollApi.scrollTo('#main', { offset: 0 })
+    triggerGoogleEasterEgg(event.currentTarget)
   }
 
   const handleRegisterClick = () => {
