@@ -197,6 +197,14 @@
     color: transparent;
   }
 
+  .grad-google-text {
+    background-image: linear-gradient(90deg, #4285F4 0%, #EA4335 33%, #FBBC05 66%, #34A853 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+  }
+
   .grad-google-animated {
     background: linear-gradient(
       120deg,

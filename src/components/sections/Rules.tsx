@@ -46,7 +46,7 @@ export function Rules() {
       id="rules"
       index={6}
       eyebrow="OFFICIAL GUIDELINES"
-      heading="Rules &amp; Code of Conduct"
+      heading="Rules & Code of Conduct"
       gradientWords={['Code', 'of', 'Conduct']}
       deck="Fairness, integrity, and safety are non-negotiable. Please read through team size parameters, code originality constraints, and submission criteria."
       band="elevated"

@@ -105,7 +105,7 @@ export function Organizers() {
       id="organizers"
       index={8}
       eyebrow="COMMUNITY LEADERSHIP"
-      heading="Organizers"
+      heading="Community Organizers"
       gradientWords={['Organizers']}
       deck="The student leads behind GDGoC • MITS-DU Gwalior driving HackInnov8 2026."
       band="elevated"

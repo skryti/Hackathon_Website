@@ -1,5 +1,6 @@
 import { Users, UtensilsCrossed, Network, Code2, Rocket } from 'lucide-react'
 import { Reveal } from '../ui/Reveal'
+import { GoogleText } from '../ui/GoogleText'
 
 export function About() {
   return (
@@ -16,17 +17,10 @@ export function About() {
 
           {/* Centered Heading matching Image 1 */}
           <h2 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-[3.4rem] font-black text-center tracking-tight leading-[1.08]">
-            <span className="text-gray-900 dark:text-white">Engineering The Future At </span>
-            <span className="inline-block">
-              <span className="text-[#818cf8]">M</span>
-              <span className="text-[#ec4899]">I</span>
-              <span className="text-[#f97316]">T</span>
-              <span className="text-[#ef4444]">S</span>
-            </span>
+            <span className="text-gray-900 dark:text-white font-black">Engineering The Future At </span>
+            <GoogleText text="MITS" className="font-black" />
             <br />
-            <span className="bg-gradient-to-r from-[#f97316] via-[#eab308] to-[#22c55e] bg-clip-text text-transparent">
-              Gwalior
-            </span>
+            <GoogleText text="Gwalior" className="font-black" />
           </h2>
 
           {/* Centered Deck / Subtitle matching Image 1 */}

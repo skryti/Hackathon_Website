@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion'
 import { ArrowUpRight, Clock, Users, ShieldCheck, Gift, Sparkles } from 'lucide-react'
 import { Button } from '../ui/Button'
+import { GoogleText } from '../ui/GoogleText'
 import { EVENT } from '../../data/event'
 import { triggerGoogleConfetti } from '../../lib/confetti'
 import { usePrefersReducedMotion } from '../../hooks/usePrefersReducedMotion'
@@ -86,10 +87,8 @@ export function Register() {
         </div>
 
         <h2 id="register-heading" className="mt-6 font-display text-3xl sm:text-4xl md:text-5xl font-black tracking-tight text-center">
-          <span className="text-gray-900 dark:text-white">Are You Ready For </span>
-          <span className="bg-gradient-to-r from-[#4285F4] via-[#EA4335] via-[#FBBC05] to-[#34A853] bg-clip-text text-transparent font-black">
-            HackInnov8?
-          </span>
+          <span className="text-gray-900 dark:text-white font-black">Are You Ready For </span>
+          <GoogleText text="HackInnov8?" className="font-black" />
         </h2>
 
         <p className="mt-6 max-w-2xl text-body-lg text-txt-2 leading-relaxed">

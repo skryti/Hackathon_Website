@@ -49,21 +49,21 @@ const KIND_CONFIG: Record<ScheduleKind, { color: string; border: string; bg: str
 const PHASES = [
   {
     id: 1,
-    label: 'Day 1 (Hours 00 - 12)',
-    date: 'SATURDAY, NOV 14, 2026 • HOURS 00 - 12',
-    title: 'Phase 1: Kickoff, Ideation & Mentor Sync',
+    label: 'Phase 1 (Hours 00 - 12)',
+    date: 'DAY 1 • REGISTRATION, BRIEFING & KICKOFF',
+    title: 'Phase 1: Inauguration & Development Kickoff',
   },
   {
     id: 2,
-    label: 'Day 2 (Hours 12 - 28)',
-    date: 'SUNDAY, NOV 15, 2026 • HOURS 12 - 28',
-    title: 'Phase 2: The 24-Hour Build Sprint',
+    label: 'Phase 2 (Hours 12 - 28)',
+    date: 'DAY 2 • CORE DEVELOPMENT & MENTORSHIP',
+    title: 'Phase 2: Sprint Execution & Evaluation Checkpoints',
   },
   {
     id: 3,
-    label: 'Day 3 (Hours 28 - 36)',
-    date: 'SUNDAY, NOV 15, 2026 • HOURS 28 - 36',
-    title: 'Phase 3: Final Pitches, Judging & Victory Ceremony',
+    label: 'Phase 3 (Hours 28 - 36)',
+    date: 'DAY 3 • SUBMISSION, DEMOS & AWARDS',
+    title: 'Phase 3: Code Freeze, Project Demonstrations & Valedictory',
   },
 ]
 
@@ -85,7 +85,7 @@ export function Timeline() {
       eyebrow="36-HOUR RUNTIME SCHEDULE"
       heading="The Hackathon Timeline"
       gradientWords={['Timeline']}
-      deck="Every hour counts. Explore our structured 3–phase schedule packed with keynotes, mentorship rounds, meal breaks, and final pitching showdowns."
+      deck="A structured 36-hour schedule detailing checkpoints, development windows, mentorship reviews, and evaluation rounds."
       band="elevated"
     >
       {/* Legend & Phase Tabs */}

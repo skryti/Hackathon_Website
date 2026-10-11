@@ -62,8 +62,8 @@ export function Prizes() {
       id="prizes"
       index={4}
       eyebrow="THE VICTORY REWARDS"
-      heading="₹35,000+ Prize Pool &amp; Perks"
-      gradientWords={['Prize', 'Pool', 'Perks']}
+      heading="₹35,000+ Prize Pool & Perks"
+      gradientWords={['Prize', 'Pool', '&', 'Perks']}
       deck="Top winners take home direct cash awards (₹20,000 for 1st Prize, ₹10,000 for 2nd Prize, ₹5,000 for 3rd Prize), official GDG trophies, Google Cloud credits, and exclusive swag hampers."
       band="elevated"
     >
