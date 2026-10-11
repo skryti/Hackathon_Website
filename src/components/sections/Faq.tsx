@@ -34,7 +34,7 @@ export function Faq() {
 
             {/* Stylish subtle Email pill */}
             <a
-              href={`mailto:${EVENT.contacts.general}?subject=HackInnov8%202026%20Inquiry`}
+              href={`https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(EVENT.contacts.general)}&su=${encodeURIComponent('HackInnov8 2026 Inquiry')}`}
               target="_blank"
               rel="noopener noreferrer"
               className="group inline-flex items-center gap-2.5 rounded-full border border-white/10 bg-white/[0.04] px-4 py-2 text-xs sm:text-sm font-medium text-gray-200 transition-all duration-200 hover:border-google-blue/50 hover:bg-google-blue/10 hover:text-white shrink-0 self-start sm:self-auto"

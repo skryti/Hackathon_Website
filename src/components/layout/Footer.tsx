@@ -38,10 +38,26 @@ function resolveSocialIcon(name: string): IconType | LucideIcon {
 }
 
 const CONTACT_LINES = [
-  { label: 'General Inquiries', value: EVENT.contacts.general, href: `mailto:${EVENT.contacts.general}` },
-  { label: 'Lead Organizer', value: EVENT.contacts.lead, href: `mailto:${EVENT.contacts.lead}` },
-  { label: 'Sponsorships', value: EVENT.contacts.sponsors, href: `mailto:${EVENT.contacts.sponsors}` },
-  { label: 'Helpline Desk', value: EVENT.contacts.phone, href: `tel:${EVENT.contacts.phone.replace(/\s+/g, '')}` },
+  {
+    label: 'General Inquiries',
+    value: EVENT.contacts.general,
+    href: `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(EVENT.contacts.general)}&su=${encodeURIComponent('HackInnov8 2026 Inquiry')}`,
+  },
+  {
+    label: 'Lead Organizer',
+    value: EVENT.contacts.lead,
+    href: `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(EVENT.contacts.lead)}&su=${encodeURIComponent('HackInnov8 2026 Lead Inquiry')}`,
+  },
+  {
+    label: 'Sponsorships',
+    value: EVENT.contacts.sponsors,
+    href: `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(EVENT.contacts.sponsors)}&su=${encodeURIComponent('HackInnov8 2026 Sponsorship Inquiry')}`,
+  },
+  {
+    label: 'Helpline Desk',
+    value: EVENT.contacts.phone,
+    href: `tel:${EVENT.contacts.phone.replace(/\s+/g, '')}`,
+  },
 ]
 
 export function Footer() {
@@ -108,7 +124,12 @@ export function Footer() {
               {CONTACT_LINES.map((line) => (
                 <li key={line.label}>
                   <div className="font-mono text-xs uppercase text-txt-3">{line.label}</div>
-                  <a href={line.href} className="text-txt-2 transition-colors hover:text-google-blue">
+                  <a
+                    href={line.href}
+                    target={line.href.startsWith('http') ? '_blank' : undefined}
+                    rel={line.href.startsWith('http') ? 'noopener noreferrer' : undefined}
+                    className="text-txt-2 transition-colors hover:text-google-blue"
+                  >
                     {line.value}
                   </a>
                 </li>
