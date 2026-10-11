@@ -1,6 +1,6 @@
 import { useId, useRef, useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
-import { ChevronDown } from 'lucide-react'
+import { Plus } from 'lucide-react'
 import { cn } from '../../lib/cn'
 
 interface AccordionItem {
@@ -58,17 +58,24 @@ export function Accordion({ items, defaultOpenIndex = null }: AccordionProps) {
               onClick={() => toggle(i)}
               onKeyDown={(e) => handleKeyDown(e, i)}
               className={cn(
-                'flex w-full items-center justify-between gap-3 px-4 sm:px-5 py-3 sm:py-3.5 text-left transition-colors duration-150 hover:bg-surface/60',
+                'group flex w-full items-center justify-between gap-3 px-4 sm:px-5 py-3 sm:py-3.5 text-left transition-colors duration-150 hover:bg-surface/60',
                 isOpen && 'bg-surface/40',
               )}
             >
-              <span className="text-xs sm:text-sm md:text-[15px] font-semibold text-txt">{item.question}</span>
+              <span className="text-xs sm:text-sm md:text-[15px] font-semibold text-txt group-hover:text-google-blue transition-colors">
+                {item.question}
+              </span>
               <motion.span
-                animate={{ rotate: isOpen ? 180 : 0 }}
+                animate={{ rotate: isOpen ? 45 : 0 }}
                 transition={{ duration: 0.2 }}
-                className="shrink-0 text-txt-3"
+                className={cn(
+                  'flex h-6 w-6 sm:h-7 sm:w-7 shrink-0 items-center justify-center rounded-full border transition-colors',
+                  isOpen
+                    ? 'border-google-blue/40 bg-google-blue/15 text-google-blue'
+                    : 'border-border/80 bg-surface/50 text-txt-3 group-hover:text-txt group-hover:border-border',
+                )}
               >
-                <ChevronDown size={16} aria-hidden />
+                <Plus size={14} aria-hidden />
               </motion.span>
             </button>
             <AnimatePresence initial={false}>

@@ -35,9 +35,13 @@ export const EVENT = {
     '100% FREE REGISTRATION',
   ],
   contacts: {
-    general: 'gdgocmits@gmail.com',
-    lead: 'gdgocmits@gmail.com',
-    sponsors: 'gdgocmits@gmail.com',
-    phone: '+91 751 240 9300',
+    general: 'gdgmitssupport@gmail.com',
+    lead: 'gdgocmitssupport@gmail.com',
+    sponsors: 'sponsors.gdgocmits@gmail.com',
+    phone: '+91 98260 18492',
+    helpline: [
+      { name: 'Vaibhav Sharma', role: 'GDGoC Lead', phone: '+91 98260 18492' },
+      { name: 'Riya Verma', role: 'Student Coordinator', phone: '+91 94251 76230' },
+    ],
   },
 } as const

@@ -1,9 +1,10 @@
 import { useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { X, FileText, ArrowUpRight, Download, MapPin, Calendar, Shield } from 'lucide-react'
+import { X, FileText, ArrowUpRight, MapPin, Calendar, Shield } from 'lucide-react'
 import { EVENT } from '../../data/event'
 import { Button } from './Button'
 import { triggerGoogleConfetti } from '../../lib/confetti'
+import { useScrollApi } from '../layout/SmoothScrollProvider'
 
 interface BrochureModalProps {
   isOpen: boolean
@@ -11,6 +12,7 @@ interface BrochureModalProps {
 }
 
 export function BrochureModal({ isOpen, onClose }: BrochureModalProps) {
+  const scrollApi = useScrollApi()
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === 'Escape') onClose()
@@ -115,15 +117,18 @@ export function BrochureModal({ isOpen, onClose }: BrochureModalProps) {
               Register Now
             </Button>
             <Button
-              as="a"
-              href="#rules"
-              onClick={onClose}
+              onClick={() => {
+                onClose()
+                setTimeout(() => {
+                  scrollApi.scrollTo('#rules', { offset: -88 })
+                }, 80)
+              }}
               variant="secondary"
               size="md"
-              icon={Download}
-              className="flex-1"
+              icon={ArrowUpRight}
+              className="flex-1 font-semibold"
             >
-              Explore Full Rules
+              Explore Full Guide
             </Button>
           </div>
         </motion.div>
